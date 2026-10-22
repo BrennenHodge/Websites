@@ -14,9 +14,10 @@
   --brass: #A8873F;
   --photo-ground: #1E3A2B;
 
-  --f-display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
-  --f-body: "Hanken Grotesk", "Helvetica Neue", Arial, system-ui, sans-serif;
-  --f-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --f-display: "Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --f-body: "Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --f-label: "Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --plate: #FFFFFF;
 
   --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.86rem);
   --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
@@ -41,6 +42,7 @@
     --barn: #E06A5C;
     --brass: #D2B26D;
     --photo-ground: #1A3324;
+    --plate: #F4F5F1;
     color-scheme: dark;
   }
 }
@@ -57,6 +59,7 @@
   --barn: #E06A5C;
   --brass: #D2B26D;
   --photo-ground: #1A3324;
+  --plate: #F4F5F1;
   color-scheme: dark;
 }
 
@@ -84,10 +87,10 @@ a { color: inherit; }
 h1, h2, h3 { margin: 0; text-wrap: balance; }
 h2 {
   font-family: var(--f-display);
-  font-weight: 500;
+  font-weight: 750;
   font-size: var(--step-2);
-  line-height: 1.08;
-  letter-spacing: -0.01em;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
 }
 h3 { font-size: var(--step-1); font-weight: 600; line-height: 1.25; }
 p { margin: 0; }
@@ -117,7 +120,9 @@ p { margin: 0; }
 }
 
 .eyebrow {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
+  font-weight: 700;
+  font-stretch: 112%;
   font-size: var(--step--1);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -148,12 +153,14 @@ p { margin: 0; }
 .logo { text-decoration: none; display: grid; line-height: 1.1; }
 .logo__name {
   font-family: var(--f-display);
-  font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  font-stretch: 112%;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 .logo__meta {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 0.68rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -215,8 +222,9 @@ p { margin: 0; }
   left: 1rem;
   bottom: 0.9rem;
   font-family: var(--f-display);
-  font-style: italic;
-  font-size: 1.5rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
   color: var(--on-spruce);
 }
 .photo img {
@@ -238,12 +246,12 @@ p { margin: 0; }
 .hero__copy { display: grid; gap: 1.5rem; min-width: 0; }
 .hero__title {
   font-family: var(--f-display);
-  font-weight: 500;
+  font-weight: 800;
   font-size: var(--step-3);
-  line-height: 0.98;
-  letter-spacing: -0.025em;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
 }
-.hero__title em { color: var(--barn); font-weight: 400; }
+.hero__title em { color: var(--barn); font-style: normal; }
 .hero__lede { max-width: 34em; font-size: var(--step-1); line-height: 1.5; color: var(--ink-soft); }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .hero__facts {
@@ -254,7 +262,7 @@ p { margin: 0; }
 }
 .hero__facts div { padding-top: 0.9rem; padding-right: 0.5rem; }
 .hero__facts dt {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -264,12 +272,12 @@ p { margin: 0; }
   margin: 0.2rem 0 0;
   font-family: var(--f-display);
   font-size: var(--step-1);
-  font-weight: 600;
-  font-variant-numeric: lining-nums tabular-nums;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
 }
 .hero__media { margin: 0; display: grid; gap: 0.6rem; min-width: 0; }
 .coords {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   color: var(--ink-soft);
@@ -298,8 +306,11 @@ p { margin: 0; }
   gap: 2.5rem;
   animation: ticker 70s linear infinite;
   font-family: var(--f-display);
-  font-size: 1.35rem;
-  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-stretch: 115%;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 .ticker__track span::after { content: "\2726"; margin-left: 2.5rem; font-style: normal; font-size: 0.7em; color: var(--brass); }
 @keyframes ticker { to { transform: translateX(-50%); } }
@@ -331,7 +342,7 @@ p { margin: 0; }
 .dept__body { display: grid; gap: 0.5rem; }
 .dept__body p { color: var(--ink-soft); }
 .dept__brands {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 0.78rem;
   line-height: 1.7;
   letter-spacing: 0.02em;
@@ -352,17 +363,18 @@ p { margin: 0; }
   min-width: 0;
 }
 .spot__origin {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-soft);
 }
-.spot__name { font-size: clamp(2rem, 1.6rem + 1.4vw, 2.8rem); line-height: 1; }
+.spot__name { font-size: var(--step-1); font-weight: 750; letter-spacing: -0.015em; }
+.spot .plate { height: 7rem; }
 .spot p { color: var(--ink-soft); }
 .spot__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .tag {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 0.7rem;
   letter-spacing: 0.04em;
   padding: 0.2rem 0.55rem;
@@ -371,14 +383,28 @@ p { margin: 0; }
   color: var(--ink-soft);
 }
 
-/* Wordmark treatments: each brand set in a style that suits it */
-.wm { font-weight: 400; overflow-wrap: anywhere; }
-.wm--serif { font-family: var(--f-display); font-weight: 600; letter-spacing: -0.01em; }
-.wm--italic { font-family: var(--f-display); font-style: italic; font-weight: 500; }
-.wm--caps { font-family: var(--f-body); font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
-.wm--wide { font-family: var(--f-body); font-weight: 500; text-transform: uppercase; letter-spacing: 0.28em; }
-.wm--heavy { font-family: var(--f-display); font-weight: 900; letter-spacing: -0.03em; }
-.wm--mono { font-family: var(--f-mono); font-weight: 500; letter-spacing: -0.02em; }
+/* Brand logo plate: the real logo when available, otherwise the name set plainly */
+.plate {
+  background: var(--plate);
+  border-radius: var(--radius);
+  height: 5.5rem;
+  display: grid;
+  place-items: center;
+  padding: 0.75rem 1rem;
+  overflow: hidden;
+}
+.plate img { max-height: 100%; max-width: 100%; width: auto; object-fit: contain; }
+.plate__name {
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: 1.25rem;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #17211B;
+  overflow-wrap: anywhere;
+}
 
 /* Directory */
 .search input {
@@ -407,9 +433,9 @@ p { margin: 0; }
 }
 .chip:hover { border-color: var(--ink-soft); }
 .chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
-.chip__count { font-family: var(--f-mono); font-size: 0.75rem; opacity: 0.7; margin-left: 0.3rem; }
+.chip__count { font-family: var(--f-label); font-size: 0.75rem; opacity: 0.7; margin-left: 0.3rem; }
 .results {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   color: var(--ink-soft);
@@ -431,15 +457,13 @@ p { margin: 0; }
   display: grid;
   grid-template-rows: auto 1fr auto;
   gap: 0.5rem;
-  min-height: 11rem;
   min-width: 0;
   transition: background-color 0.2s;
 }
 .brand:hover { background: var(--paper-2); }
-.brand .wm { font-size: 1.6rem; line-height: 1.1; }
 .brand__what { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.45; }
 .brand__origin {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -448,8 +472,9 @@ p { margin: 0; }
 .brand__origin .local { color: var(--barn); }
 @media (max-width: 560px) {
   .shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .brand { padding: 1rem 0.85rem; min-height: 0; }
-  .brand .wm { font-size: 1.15rem; }
+  .brand { padding: 0.85rem 0.75rem; }
+  .plate { height: 4.5rem; padding: 0.5rem; }
+  .plate__name { font-size: 1rem; }
   .brand__what { font-size: 0.82rem; }
   .brand__origin { font-size: 0.62rem; }
 }
@@ -478,7 +503,7 @@ p { margin: 0; }
 .story__text { display: grid; gap: 1.1rem; max-width: 36em; font-size: 1.08rem; min-width: 0; }
 .story__text p:first-child::first-letter {
   font-family: var(--f-display);
-  font-weight: 700;
+  font-weight: 800;
   float: left;
   font-size: 3.6em;
   line-height: 0.85;
@@ -496,7 +521,7 @@ p { margin: 0; }
 .timeline li:last-child { border-bottom: 1px solid var(--line); }
 .timeline__when {
   font-family: var(--f-display);
-  font-weight: 600;
+  font-weight: 750;
   font-size: 1.15rem;
   font-variant-numeric: lining-nums;
 }
@@ -520,7 +545,7 @@ p { margin: 0; }
   min-width: 0;
 }
 .card h3 {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -532,7 +557,7 @@ p { margin: 0; }
 .hours td { text-align: right; color: var(--on-spruce-soft); padding-block: 0.3rem; white-space: nowrap; }
 .hours tr.is-today th, .hours tr.is-today td { color: var(--brass); font-weight: 600; }
 .card address { font-style: normal; line-height: 1.6; }
-.card__phone a { font-family: var(--f-display); font-size: 1.4rem; font-weight: 600; text-decoration: none; }
+.card__phone a { font-family: var(--f-display); font-size: 1.4rem; font-weight: 750; text-decoration: none; }
 .card__phone a:hover { text-decoration: underline; }
 
 /* Footer */
