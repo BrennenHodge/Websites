@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Woodstock Sports</title>
+<meta name="description" content="Woodstock Sports is a family-owned outfitter at 30 Central Street in Woodstock, Vermont: fine clothing and outerwear from more than forty brands, plus a full-service bike shop with sales, repairs and rentals.">
+<meta name="theme-color" content="#1E3A2B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Mono:wght@400;500&family=Hanken+Grotesk:wght@400;500;600;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#brands">Skip to brands</a>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="logo" href="#top" aria-label="Woodstock Sports, home">
+      <span class="logo__name">Woodstock Sports</span>
+      <span class="logo__meta">Est. 1967 &middot; Woodstock, VT</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#departments">Shop</a>
+      <a href="#brands">Brands</a>
+      <a href="#bike-shop">Bike Shop</a>
+      <a href="#story">Our Story</a>
+      <a href="#visit" class="nav__visit">Visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow"><span class="status" data-open-status>30 Central Street</span></p>
+        <h1 class="hero__title">Outfitting the village <em>since&nbsp;1967.</em></h1>
+        <p class="hero__lede">A family-owned shop for fine clothing and outerwear in the heart of Woodstock, Vermont, from Alpine ski labels to Norwegian knits. Our full-service bike shop handles sales, repairs and rentals.</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="#brands">Browse our brands</a>
+          <a class="btn btn--line" href="#visit">Plan a visit</a>
+        </div>
+        <dl class="hero__facts">
+          <div><dt>Brands on the floor</dt><dd data-brand-count>40+</dd></div>
+          <div><dt>Family-run for</dt><dd>40+ years</dd></div>
+          <div><dt>Open</dt><dd>Mon&ndash;Sat</dd></div>
+        </dl>
+      </div>
+      <figure class="hero__media">
+        <div class="photo photo--tall" data-label="Ski &amp; Alpine">
+          <img data-photo src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="A skier carving through fresh powder" width="1200" height="1500" fetchpriority="high">
+        </div>
+        <figcaption class="coords">43.6243&deg; N &middot; 72.5185&deg; W &middot; elev. 705 ft</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Brand ticker -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track" data-ticker></div>
+  </div>
+
+  <!-- Departments -->
+  <section id="departments" class="section">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow">What you&rsquo;ll find</p>
+        <h2>Four departments under one old roof.</h2>
+        <p class="section__lede">We buy for life in a Vermont village: cold mornings, long ski days, dinner in town, and a ride on the back roads when the snow melts.</p>
+      </header>
+      <div class="depts">
+        <article class="dept">
+          <div class="photo" data-label="Outerwear">
+            <img data-photo loading="lazy" src="https://images.unsplash.com/photo-1418985991508-e47386d96a71?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Snow-covered pine forest in winter" width="900" height="675">
+          </div>
+          <div class="dept__body">
+            <h3>Ski &amp; Outerwear</h3>
+            <p>Technical shells, down parkas and Alpine ski fashion from Munich, Kitzbühel, Annecy and Milan.</p>
+            <p class="dept__brands" data-dept="outerwear"></p>
+          </div>
+        </article>
+        <article class="dept">
+          <div class="photo" data-label="Knitwear">
+            <img data-photo loading="lazy" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Clothing on racks inside a boutique" width="900" height="675">
+          </div>
+          <div class="dept__body">
+            <h3>Knitwear &amp; Apparel</h3>
+            <p>Norwegian sweaters, cashmere, merino base layers and the everyday clothes you&rsquo;ll actually wear around town.</p>
+            <p class="dept__brands" data-dept="apparel"></p>
+          </div>
+        </article>
+        <article class="dept">
+          <div class="photo" data-label="Footwear">
+            <img data-photo loading="lazy" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="A running shoe on a plain background" width="900" height="675">
+          </div>
+          <div class="dept__body">
+            <h3>Footwear</h3>
+            <p>Swiss running shoes, handmade French walkers, Bavarian mountain boots and winter boots built for icy sidewalks.</p>
+            <p class="dept__brands" data-dept="footwear"></p>
+          </div>
+        </article>
+        <article class="dept">
+          <div class="photo" data-label="Accessories">
+            <img data-photo loading="lazy" src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="A pair of sunglasses" width="900" height="675">
+          </div>
+          <div class="dept__body">
+            <h3>Accessories</h3>
+            <p>Polarized sunglasses, Swedish leather gloves, hats, neck warmers and packs to carry it all.</p>
+            <p class="dept__brands" data-dept="accessories"></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spotlight -->
+  <section class="section section--band" aria-labelledby="spotlight-title">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow">On the shelf</p>
+        <h2 id="spotlight-title">Labels we&rsquo;re proud to carry.</h2>
+      </header>
+      <div class="spotlight" data-spotlight></div>
+    </div>
+  </section>
+
+  <!-- Brand directory -->
+  <section id="brands" class="section">
+    <div class="wrap">
+      <header class="section__head section__head--row">
+        <div>
+          <p class="eyebrow">The brand directory</p>
+          <h2>Every label in the shop.</h2>
+        </div>
+        <label class="search" for="brand-search">
+          <span class="visually-hidden">Search brands</span>
+          <input id="brand-search" type="search" placeholder="Search brands or products" autocomplete="off">
+        </label>
+      </header>
+      <div class="filters" role="group" aria-label="Filter by category" data-filters></div>
+      <p class="results" aria-live="polite" data-results></p>
+      <ul class="shelf" data-shelf></ul>
+      <p class="shelf__note">Stock changes with the season. Call ahead if you&rsquo;re after something specific: <a href="tel:+18024571568">802-457-1568</a>.</p>
+    </div>
+  </section>
+
+  <!-- Bike shop -->
+  <section id="bike-shop" class="section section--band">
+    <div class="wrap bike">
+      <div class="bike__media">
+        <div class="photo photo--tall" data-label="The Bike Shop">
+          <img data-photo loading="lazy" src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" alt="A bicycle leaning against a wall" width="1000" height="1250">
+        </div>
+      </div>
+      <div class="bike__copy">
+        <p class="eyebrow">The Bike Shop at Woodstock Sports</p>
+        <h2>Ride the back roads of Windsor County.</h2>
+        <p>Woodstock sits on some of the best gravel and country road riding in New England. Our service bench keeps local riders rolling, and our rental fleet gets visitors out past the covered bridges.</p>
+        <ul class="services">
+          <li><h3>Repairs &amp; tune-ups</h3><p>Full-service work on road, mountain, gravel and hybrid bikes, from flat fixes to complete overhauls.</p></li>
+          <li><h3>New bikes</h3><p>New bikes and accessories, sized and set up in the shop before you ride away.</p></li>
+          <li><h3>Rentals</h3><p>Rent by the day to explore the village, the river roads and the trails nearby.</p></li>
+          <li><h3>Ride gear &amp; fuel</h3><p>Packs and hydration from Osprey, Maloja riding kit and Hammer Nutrition fuel.</p></li>
+        </ul>
+        <p class="bike__note">Call <a href="tel:+18024571568">802-457-1568</a> for rental availability and service times.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section id="story" class="section">
+    <div class="wrap story">
+      <header class="section__head">
+        <p class="eyebrow">Our story</p>
+        <h2>One house on Central Street, two families, nearly sixty years.</h2>
+      </header>
+      <div class="story__grid">
+        <div class="story__text">
+          <p>Woodstock Sports lives in a house built around 1910 in the center of the village. It was a home before it was a shop. In 1967 Woody Darken bought The Moore House and turned it into Woodstock Sports.</p>
+          <p>Peter Johnston started working for Woody when he was fourteen. Nine years later he bought the business and the building. For more than forty years the Johnston family has run it the same way: good products, honest advice and service you can count on. We&rsquo;re still a private, family-owned business.</p>
+        </div>
+        <ol class="timeline">
+          <li><span class="timeline__when">c. 1910</span><span class="timeline__what">The house at 30 Central Street is built.</span></li>
+          <li><span class="timeline__when">1967</span><span class="timeline__what">Woody Darken buys The Moore House and opens Woodstock Sports.</span></li>
+          <li><span class="timeline__when">Age 14</span><span class="timeline__what">Peter Johnston takes his first job in the shop.</span></li>
+          <li><span class="timeline__when">+9 years</span><span class="timeline__what">Peter buys the business and the building from Woody.</span></li>
+          <li><span class="timeline__when">Today</span><span class="timeline__what">The Johnston family still runs the shop, with a full-service bike shop alongside.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit -->
+  <section id="visit" class="section section--ink">
+    <div class="wrap visit">
+      <div class="visit__intro">
+        <p class="eyebrow">Visit us</p>
+        <h2>30 Central Street, Woodstock, Vermont.</h2>
+        <p>In the middle of the village, a short walk from the green, the Middle Covered Bridge and the shops on Elm Street.</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="https://www.google.com/maps/search/?api=1&amp;query=Woodstock+Sports+30+Central+St+Woodstock+VT+05091" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn btn--line" href="tel:+18024571568">Call 802-457-1568</a>
+        </div>
+      </div>
+      <div class="visit__cards">
+        <div class="card">
+          <h3>Hours</h3>
+          <table class="hours" data-hours>
+            <tbody>
+              <tr data-day="1"><th scope="row">Monday</th><td>8:30 am &ndash; 5:00 pm</td></tr>
+              <tr data-day="2"><th scope="row">Tuesday</th><td>8:30 am &ndash; 5:00 pm</td></tr>
+              <tr data-day="3"><th scope="row">Wednesday</th><td>8:30 am &ndash; 5:00 pm</td></tr>
+              <tr data-day="4"><th scope="row">Thursday</th><td>8:30 am &ndash; 5:00 pm</td></tr>
+              <tr data-day="5"><th scope="row">Friday</th><td>8:30 am &ndash; 5:00 pm</td></tr>
+              <tr data-day="6"><th scope="row">Saturday</th><td>8:30 am &ndash; 5:00 pm</td></tr>
+              <tr data-day="0"><th scope="row">Sunday</th><td>Closed</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h3>Find us</h3>
+          <address>
+            Woodstock Sports<br>
+            30 Central Street<br>
+            Woodstock, VT 05091
+          </address>
+          <p class="card__phone"><a href="tel:+18024571568">802-457-1568</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p class="logo__name">Woodstock Sports</p>
+    <p>Fine clothing, outerwear &amp; the Bike Shop &middot; 30 Central Street, Woodstock, VT 05091 &middot; 802-457-1568</p>
+    <p class="footer__small">&copy; <span data-year>2026</span> Woodstock Sports. A private, family-owned business. Brand names are trademarks of their respective owners.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
