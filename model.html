@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Build Club Revenue Model</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .model { padding-block: clamp(2.5rem, 2rem + 3vw, 5rem); display: grid; gap: clamp(2.5rem, 2rem + 2vw, 4rem); }
+  .model__head { display: grid; gap: 1rem; max-width: 46rem; }
+  .model__head p:not(.eyebrow) { color: var(--ink-soft); }
+  .calc { display: grid; gap: 1.5rem; }
+  @media (min-width: 900px) { .calc { grid-template-columns: 0.9fr 1.1fr; align-items: start; } }
+  .inputs { display: grid; gap: 1.4rem; padding: 1.5rem; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; min-width: 0; }
+  .field { display: grid; gap: 0.45rem; }
+  .field__top { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+  .field label { font-weight: 600; }
+  .field output { font-family: var(--f-mono); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .field input[type="range"] { width: 100%; accent-color: var(--ink); }
+  .field__hint { font-size: var(--step--1); color: var(--ink-soft); }
+  .results { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; min-width: 0; }
+  @media (min-width: 560px) { .results { grid-template-columns: 1fr 1fr; } }
+  .result { display: grid; gap: 0.35rem; padding: 1.3rem 1.4rem; background: var(--paper); }
+  .result dt { font-family: var(--f-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); }
+  .result dd { margin: 0; font-family: var(--f-display); font-weight: 800; font-variation-settings: "wdth" 75; font-size: clamp(2rem, 1.6rem + 1.4vw, 2.8rem); line-height: 1; font-variant-numeric: tabular-nums; }
+  .result small { font-size: var(--step--1); color: var(--ink-soft); }
+  .result--key { background: var(--marker); color: var(--on-marker); }
+  .result--key dt, .result--key small { color: var(--on-marker); }
+  .note { font-size: var(--step--1); color: var(--ink-soft); max-width: 60em; }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 26rem; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 0.8rem 1rem 0.8rem 0; border-bottom: 1px solid var(--line); }
+  th { font-family: var(--f-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); font-weight: 500; }
+  td.num, th.num { text-align: right; padding-right: 0; }
+  tr.is-selected td { font-weight: 700; }
+  .duo { display: grid; gap: 2.5rem; }
+  @media (min-width: 900px) { .duo { grid-template-columns: 1fr 1fr; } }
+  .duo > section { min-width: 0; }
+  .duo h2 { font-family: var(--f-display); font-size: var(--step-1); font-weight: 750; font-variation-settings: "wdth" 85; margin-bottom: 1rem; }
+  .loop { display: grid; gap: 0.5rem; counter-reset: loop; }
+  .loop li { counter-increment: loop; display: grid; grid-template-columns: 2rem 1fr; gap: 0.5rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+  .loop li::before { content: counter(loop); font-family: var(--f-mono); font-weight: 600; color: var(--build); }
+  .loop li:last-child::before { content: "\21BA"; }
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar__inner">
+    <a class="mark" href="index.html" aria-label="AI Build Club, public site">
+      <span class="mark__glyph" aria-hidden="true">&gt;_</span>
+      <span class="mark__name">AI Build Club</span>
+    </a>
+    <span class="eyebrow">Internal &middot; not linked from the site</span>
+  </div>
+</header>
+
+<main class="wrap model">
+  <div class="model__head">
+    <p class="eyebrow">Business model</p>
+    <h1 class="section-title">Two-stage revenue model</h1>
+    <p>The $497 boot camp gets people building. The $79/month club keeps them building. Move the sliders to see how boot camp volume, conversion into the club and member tenure combine.</p>
+  </div>
+
+  <section class="calc" aria-label="Revenue calculator">
+    <form class="inputs" id="model-form">
+      <div class="field">
+        <div class="field__top"><label for="camps">Boot camps per month</label><output for="camps" id="camps-out">8</output></div>
+        <input type="range" id="camps" min="1" max="20" step="1" value="8">
+        <p class="field__hint">Two a week, four weeks a month, is 8.</p>
+      </div>
+      <div class="field">
+        <div class="field__top"><label for="seats">Paying attendees per boot camp</label><output for="seats" id="seats-out">10</output></div>
+        <input type="range" id="seats" min="4" max="30" step="1" value="10">
+      </div>
+      <div class="field">
+        <div class="field__top"><label for="conv">Share joining the club</label><output for="conv" id="conv-out">40%</output></div>
+        <input type="range" id="conv" min="5" max="80" step="5" value="40">
+      </div>
+      <div class="field">
+        <div class="field__top"><label for="tenure">Average membership length</label><output for="tenure" id="tenure-out">6 months</output></div>
+        <input type="range" id="tenure" min="1" max="24" step="1" value="6">
+      </div>
+    </form>
+
+    <dl class="results" aria-live="polite">
+      <div class="result"><dt>Monthly boot camp sales</dt><dd id="r-sales">$39,760</dd><small id="r-sales-sub">80 tickets at $497</small></div>
+      <div class="result"><dt>New members per month</dt><dd id="r-new">32.0</dd><small>attendees &times; share joining</small></div>
+      <div class="result"><dt>New recurring revenue added each month</dt><dd id="r-mrr">$2,528</dd><small>new members &times; $79</small></div>
+      <div class="result result--key"><dt>Eventual recurring revenue*</dt><dd id="r-steady">$15,168</dd><small id="r-steady-sub">about 192 active members at $79</small></div>
+      <div class="result"><dt>Revenue per customer</dt><dd id="r-ltv">$971</dd><small id="r-ltv-sub">$497 boot camp + $474 membership</small></div>
+      <div class="result"><dt>Total monthly gross at steady state</dt><dd id="r-total">$54,928</dd><small>boot camps + club</small></div>
+    </dl>
+  </section>
+
+  <p class="note">*Illustrative steady-state estimate: active members = new members per month &times; average months a member stays. It assumes the same number of new members every month and is not immediate revenue or a forecast. All figures are gross, before operating costs, refunds, payment fees and acquisition costs. Real retention and conversion still need validation.</p>
+
+  <div class="duo">
+    <section aria-labelledby="tenure-title">
+      <h2 id="tenure-title">The number that matters most: how long members stay</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Membership length</th><th scope="col" class="num">Club revenue per member</th><th scope="col" class="num">With boot camp</th></tr></thead>
+          <tbody id="tenure-table"></tbody>
+        </table>
+      </div>
+    </section>
+    <section aria-labelledby="loop-title">
+      <h2 id="loop-title">The growth loop</h2>
+      <ol class="loop">
+        <li>A professional attends a boot camp</li>
+        <li>Builds something they're proud of</li>
+        <li>Joins the club and keeps building</li>
+        <li>Shares the app with friends and coworkers</li>
+        <li>Friends sign up for the next boot camp</li>
+      </ol>
+      <p class="note" style="margin-top:1rem">Member demos and launch stories become the marketing for the next $497 event. Keep the $79 tier as group access, not one-on-one development, so it scales.</p>
+    </section>
+  </div>
+</main>
+
+<script>
+(function () {
+  const BOOTCAMP = 497;
+  const CLUB = 79;
+  const $ = (id) => document.getElementById(id);
+  const usd = (n) => "$" + Math.round(n).toLocaleString("en-US");
+  const fields = ["camps", "seats", "conv", "tenure"];
+
+  function render() {
+    const camps = +$("camps").value;
+    const seats = +$("seats").value;
+    const conv = +$("conv").value / 100;
+    const tenure = +$("tenure").value;
+
+    const tickets = camps * seats;
+    const sales = tickets * BOOTCAMP;
+    const newMembers = tickets * conv;
+    const newMrr = newMembers * CLUB;
+    const active = newMembers * tenure;
+    const steady = active * CLUB;
+    const perMember = tenure * CLUB;
+
+    $("camps-out").textContent = camps;
+    $("seats-out").textContent = seats;
+    $("conv-out").textContent = Math.round(conv * 100) + "%";
+    $("tenure-out").textContent = tenure + (tenure === 1 ? " month" : " months");
+
+    $("r-sales").textContent = usd(sales);
+    $("r-sales-sub").textContent = tickets + " tickets at $" + BOOTCAMP;
+    $("r-new").textContent = newMembers.toFixed(1);
+    $("r-mrr").textContent = usd(newMrr);
+    $("r-steady").textContent = usd(steady);
+    $("r-steady-sub").textContent = "about " + Math.round(active).toLocaleString("en-US") + " active members at $" + CLUB;
+    $("r-ltv").textContent = usd(BOOTCAMP + perMember);
+    $("r-ltv-sub").textContent = "$" + BOOTCAMP + " boot camp + " + usd(perMember) + " membership";
+    $("r-total").textContent = usd(sales + steady);
+
+    const rows = [3, 6, 12];
+    if (!rows.includes(tenure)) rows.push(tenure);
+    rows.sort((a, b) => a - b);
+    $("tenure-table").innerHTML = rows.map((m) =>
+      '<tr class="' + (m === tenure ? "is-selected" : "") + '"><td>' + m + (m === 1 ? " month" : " months") +
+      '</td><td class="num">' + usd(m * CLUB) + '</td><td class="num">' + usd(BOOTCAMP + m * CLUB) + "</td></tr>"
+    ).join("");
+  }
+
+  fields.forEach((id) => $(id).addEventListener("input", render));
+  $("model-form").addEventListener("submit", (e) => e.preventDefault());
+  render();
+})();
+</script>
+</body>
+</html>
