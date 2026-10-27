@@ -521,7 +521,19 @@ mark {
 .quote__text { font-size: var(--step-1); line-height: 1.4; }
 .quote__who { display: flex; align-items: center; gap: 0.8rem; font-size: var(--step--1); color: var(--ink-soft); line-height: 1.4; }
 .quote__who strong { color: var(--ink); }
-.quote__avatar { flex: none; width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--paper-2); object-fit: cover; }
+.quote__avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--band);
+  color: var(--marker);
+  font-weight: 700;
+  font-size: 0.85rem;
+  object-fit: cover;
+}
 .quote--ph { border-style: dashed; }
 .quote--ph .quote__text { color: var(--ink-soft); }
 
