@@ -257,7 +257,7 @@ mark {
 .hero__copy { display: grid; gap: 1.5rem; min-width: 0; }
 .hero__title {
   font-family: var(--f-display);
-  font-size: var(--step-3);
+  font-size: clamp(2.5rem, 1.5rem + 3.9vw, 4.75rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
@@ -415,8 +415,44 @@ mark {
 .hour h3 { font-family: var(--f-display); font-size: var(--step-1); font-weight: 650; letter-spacing: -0.015em; }
 .hour p:not(.hour__time) { color: var(--ink-soft); max-width: 40em; }
 
+/* Problem, then the shift */
+.problem { padding-block: var(--section); border-top: 1px solid var(--line); }
+.problem__body { display: grid; gap: 1.75rem; min-width: 0; }
+.crosses { display: grid; }
+.crosses li {
+  position: relative;
+  padding: 1.1rem 0 1.1rem 2.2rem;
+  border-top: 1px solid var(--line);
+  font-size: var(--step-1);
+  line-height: 1.35;
+}
+.crosses li:last-child { border-bottom: 1px solid var(--line); }
+.crosses li::before,
+.crosses li::after {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: calc(1.1rem + 0.62em);
+  width: 0.95rem;
+  height: 2.5px;
+  background: #E5484D;
+  transform: rotate(45deg);
+}
+.crosses li::after { transform: rotate(-45deg); }
+.problem__turn {
+  padding: 1.25rem 1.4rem;
+  border-left: 4px solid var(--build);
+  background: var(--paper-2);
+  border-radius: 0 12px 12px 0;
+  font-size: var(--step-1);
+  line-height: 1.45;
+}
+
+.leave__scope { margin-top: 1.5rem; color: var(--ink-soft); max-width: 44rem; }
+
 /* Who it's for */
 .fit { padding-block: var(--section); }
+.fit__not { margin-top: 1.25rem; color: var(--ink-soft); }
 
 /* Instructor */
 .teacher { padding-block: var(--section); background: var(--band); color: var(--on-band); }
@@ -469,7 +505,7 @@ mark {
   line-height: 0.95;
   letter-spacing: -0.04em;
 }
-.plan__per { font-family: var(--f-mono); font-size: var(--step--1); color: var(--ink-soft); }
+.plan__per { font-size: var(--step--1); color: var(--ink-soft); }
 .plan .ticks { padding: 1.1rem 0 0.5rem; border-top: 1px solid var(--line); }
 .plan__fine { font-size: var(--step--1); color: var(--ink-soft); text-align: center; }
 
@@ -528,13 +564,14 @@ mark {
 /* Final call */
 .final { padding-block: var(--section); }
 .final__inner { display: grid; gap: 1.5rem; justify-items: start; }
+.final__sub { font-size: var(--step-1); color: var(--ink-soft); margin-top: -0.5rem; }
 .final__title {
   font-family: var(--f-display);
-  font-size: var(--step-3);
+  font-size: clamp(2.3rem, 1.5rem + 3.4vw, 4.4rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
-  max-width: 15ch;
+  max-width: 17ch;
 }
 .final__fine { color: var(--ink-soft); }
 
