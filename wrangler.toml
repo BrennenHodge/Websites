@@ -1,0 +1,9 @@
+# Cloudflare Pages config. Deploy: npx wrangler pages deploy --branch main
+name = "ai-build-club"
+pages_build_output_dir = "public"
+compatibility_date = "2026-09-01"
+
+# Emails from visitors who aren't ready to buy (functions/api/lead.js)
+[[kv_namespaces]]
+binding = "LEADS"
+id = "b2bc4c59e09d40df813e9163d79918a0"

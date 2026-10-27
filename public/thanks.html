@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>You're in · AI App Boot Camp</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F3F4F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101217" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="thanks">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Stripe confirmation page. Payment Link "after payment" URL: /thanks?session_id={CHECKOUT_SESSION_ID} -->
+<header class="bar">
+  <div class="wrap bar__inner">
+    <a class="mark" href="/" aria-label="AI Build Club home">
+      <span class="mark__glyph" aria-hidden="true">&gt;_</span>
+      <span class="mark__name">AI Build Club</span>
+    </a>
+  </div>
+</header>
+
+<main id="main" class="thanks">
+  <div class="wrap thanks__inner">
+    <p class="eyebrow">Seat confirmed</p>
+    <h1 class="thanks__title">You're in. <mark>Let's build.</mark></h1>
+    <p class="thanks__lede">Your receipt is on its way to your inbox. Here's what happens next.</p>
+
+    <div class="thanks__event">
+      <p class="plan__step">AI App Boot Camp</p>
+      <p class="thanks__when"><span data-event="date">Saturday, November 21</span> &middot; <span data-event="time">10 am &ndash; 1 pm CT</span> &middot; Live online</p>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <h2>Save the date</h2>
+        <p>Add it to your calendar now so nothing gets in the way.</p>
+        <div class="step__actions">
+          <a class="btn" data-cal="google" href="#" target="_blank" rel="noopener">Add to Google Calendar</a>
+          <a class="btn btn--ghost" data-cal="ics" href="#">Apple / Outlook</a>
+        </div>
+      </li>
+      <li class="step">
+        <h2>Watch your inbox</h2>
+        <!-- TODO: confirm how and when the join link is sent. -->
+        <p>Your join link and setup steps come by email before the session.</p>
+      </li>
+      <li class="step">
+        <h2>Pick your idea</h2>
+        <p>Bring the one you're most excited about. Write a few sentences: who it's for and what it should do.</p>
+      </li>
+      <li class="step">
+        <h2>Get set up</h2>
+        <!-- TODO: confirm which Replit plan attendees need. -->
+        <p>A laptop and a reliable internet connection. The simple setup steps come with your join link.</p>
+      </li>
+    </ol>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <span class="mark" aria-hidden="true">
+      <span class="mark__glyph">&gt;_</span>
+      <span class="mark__name">AI Build Club</span>
+    </span>
+    <p class="foot__copy">&copy; <span data-year>2026</span> AI Build Club. Replit is a trademark of its owner.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
