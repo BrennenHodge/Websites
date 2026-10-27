@@ -3,317 +3,221 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI Build Club</title>
-<meta name="description" content="Build your own working app in three hours at the AI App Boot Camp, then keep building every week with live sessions, help and a community of builders in the AI Build Club. No coding background needed.">
+<title>AI App Boot Camp · AI Build Club</title>
+<meta name="description" content="Build your own app in three hours, live online. No coding. Leave with a working MVP on a real URL, or your money back.">
 <meta name="theme-color" content="#F3F4F7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#101217" media="(prefers-color-scheme: dark)">
-<meta property="og:title" content="AI Build Club: you're not a programmer, you're a builder">
-<meta property="og:description" content="Three hours to a working first version of your own app. Then a place to keep building, every week.">
+<meta property="og:title" content="You have the ideas. Now ship them.">
+<meta property="og:description" content="Build your own app in three hours at the AI App Boot Camp. No coding. A working MVP on a URL, or your money back.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<!-- Ad landing page: one offer, one action. No nav links to leak traffic. -->
 <header class="bar">
   <div class="wrap bar__inner">
-    <a class="mark" href="#top" aria-label="AI Build Club, home">
+    <a class="mark" href="#top" aria-label="AI Build Club, back to top">
       <span class="mark__glyph" aria-hidden="true">&gt;_</span>
       <span class="mark__name">AI Build Club</span>
     </a>
-    <nav class="nav" aria-label="Main">
-      <a href="#bootcamp">Boot Camp</a>
-      <a href="#club">The Club</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a class="btn btn--small" data-link="bootcamp" href="#pricing">Reserve a seat</a>
+    <a class="btn btn--small" data-link="checkout" href="#reserve">Reserve your seat</a>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- Hero: the thesis, plus an example build log that runs from boot camp to launch -->
+  <!-- 1 + 2. Promise, then the demo video right beside it -->
   <section class="hero" id="top">
     <div class="wrap hero__grid">
       <div class="hero__copy">
-        <p class="eyebrow">For executives, entrepreneurs and consultants</p>
-        <h1 class="hero__title">You&rsquo;re not a programmer. You&rsquo;re a <mark>builder.</mark></h1>
-        <p class="hero__lede">Build your own working app in three hours at the AI App Boot Camp. Then keep building it every week, alongside other builders, in the AI Build Club.</p>
-        <div class="hero__actions">
-          <a class="btn" data-link="bootcamp" href="#pricing">Reserve a boot camp seat <span class="btn__price">$497</span></a>
-          <a class="btn btn--ghost" href="#club">How the club works</a>
+        <p class="eyebrow">For professionals and entrepreneurs at heart</p>
+        <h1 class="hero__title">You have the ideas. Now <mark>ship them.</mark></h1>
+        <p class="hero__lede">Build your own app in three hours at the AI App Boot Camp. No coding. You leave with a working MVP live on a real URL, or your money back.</p>
+        <div class="hero__actions" data-hero-cta>
+          <a class="btn btn--big" data-link="checkout" href="#reserve">Reserve your seat <span class="btn__price">$497</span></a>
+          <p class="hero__when"><span data-event="date">Saturday, November 21</span> &middot; <span data-event="time">10 am &ndash; 1 pm CT</span> &middot; Live online</p>
         </div>
         <ul class="hero__facts" aria-label="Boot camp at a glance">
-          <li><strong>3 hours</strong> start to working app</li>
-          <li><strong>~10 builders</strong> per session</li>
-          <li><strong>0 lines</strong> of code you need to know</li>
+          <li><strong>3 hours</strong> idea to live app</li>
+          <li><strong>0 code</strong> you need to know</li>
+          <li><strong>MVP guarantee</strong> or your money back</li>
         </ul>
       </div>
 
-      <figure class="log" aria-labelledby="log-caption">
-        <div class="log__head">
-          <span class="log__dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="log__file">client-intake / build log</span>
-          <span class="log__tag">Example</span>
+      <figure class="demo">
+        <!-- TODO: 45-second screen recording. Set CONFIG.video in app.js and it replaces this placeholder. -->
+        <div class="demo__frame" data-video>
+          <div class="demo__ph">
+            <span class="demo__play" aria-hidden="true"></span>
+            <p class="demo__title">Watch an app get built in 45 seconds</p>
+            <p class="demo__tag">Video placeholder</p>
+          </div>
         </div>
-        <ol class="log__list" data-log>
-          <li class="log__group">AI App Boot Camp <span>3 hours</span></li>
-          <li class="log__row"><span class="log__v">v0.1</span><span class="log__when">Hour 1</span><span class="log__msg">Described the app to the AI agent in plain English</span></li>
-          <li class="log__row"><span class="log__v">v0.2</span><span class="log__when">Hour 2</span><span class="log__msg">Intake form saves every client to a database</span></li>
-          <li class="log__row"><span class="log__v">v0.3</span><span class="log__when">Hour 3</span><span class="log__msg">Deployed. A working first version is live</span></li>
-          <li class="log__group">AI Build Club <span>every week</span></li>
-          <li class="log__row"><span class="log__v">v0.4</span><span class="log__when">Week 2</span><span class="log__msg">Sign-in working after the help session</span></li>
-          <li class="log__row"><span class="log__v">v0.7</span><span class="log__when">Week 5</span><span class="log__msg">Email alerts and a dashboard for the team</span></li>
-          <li class="log__row log__row--ship"><span class="log__v">v1.0</span><span class="log__when">Demo Day</span><span class="log__msg">Launched to the first ten clients</span></li>
-        </ol>
-        <figcaption id="log-caption" class="log__caption">One app, two stages. The boot camp gets you to a first version. The club gets you to launch.</figcaption>
+        <figcaption class="demo__cap">Me, talking to AI. The app building itself. Live on a URL at the end.</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- The path: a real two-step sequence -->
-  <section class="path" aria-labelledby="path-title">
+  <!-- 3. What you leave with -->
+  <section class="leave" aria-labelledby="leave-title">
     <div class="wrap">
-      <h2 class="section-title" id="path-title">Two steps. One goal: <span class="nowrap">real software.</span></h2>
-      <ol class="path__steps">
-        <li class="step">
-          <p class="step__label">Step 1 &middot; The entry point</p>
-          <h3 class="step__name">AI App Boot Camp</h3>
-          <p class="step__price"><span class="num">$497</span> one time</p>
-          <p>Three hours. Your own app. Real software. You leave with a working first version.</p>
-          <a class="link" href="#bootcamp">What happens in the room</a>
-        </li>
-        <li class="step">
-          <p class="step__label">Step 2 &middot; The membership</p>
-          <h3 class="step__name">AI Build Club</h3>
-          <p class="step__price"><span class="num">$79</span> per month</p>
-          <p>Join us every week. Keep building. Get unstuck. Launch and improve your software.</p>
-          <a class="link" href="#club">What members get</a>
-        </li>
-        <li class="step step--result">
-          <p class="step__label">The long-term result</p>
-          <h3 class="step__name">A community of builders</h3>
-          <p class="step__price">&nbsp;</p>
-          <p>People launching businesses, sharing projects, learning from each other and creating new products.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Boot camp -->
-  <section class="bootcamp" id="bootcamp" aria-labelledby="bootcamp-title">
-    <div class="wrap split">
-      <div class="split__intro">
-        <p class="eyebrow">AI App Boot Camp &middot; $497</p>
-        <h2 class="section-title" id="bootcamp-title">Three hours from idea to working app.</h2>
-        <p>Most people walk in having never built software. They walk out with an app they made themselves, running on the web, that they can show to a client or a coworker that afternoon.</p>
-        <p>The method is simple, and you'll use it for every app after this one: open your laptop, open Replit, tell AI what to build, and keep going until it works.</p>
-        <ul class="ticks">
-          <li>No coding background needed</li>
-          <li>Small group, about ten people</li>
-          <li>Bring a laptop and an idea you care about</li>
-        </ul>
+      <div class="head">
+        <h2 class="section-title" id="leave-title">Walk in with an idea. Walk out with a live app.</h2>
+        <p>Bring a big idea: a CRM for your industry, a client portal, even a marketplace. In three hours you build the MVP, the core of it working and live, so you can start testing it with real people.</p>
       </div>
-      <ol class="hours" aria-label="How the three hours go">
-        <li class="hour">
-          <p class="hour__time"><span class="num">0:00</span>&ndash;<span class="num">1:00</span></p>
-          <h3>Start your project</h3>
-          <p>Pick the app you want to build, set up Replit, and learn how to describe software so an AI coding agent builds what you mean.</p>
+      <ul class="cards">
+        <li class="card">
+          <span class="card__n">01</span>
+          <h3>Your MVP, live on a URL</h3>
+          <p>A real web address you can send to customers, partners or your team the same day.</p>
         </li>
-        <li class="hour">
-          <p class="hour__time"><span class="num">1:00</span>&ndash;<span class="num">2:00</span></p>
-          <h3>Build the core</h3>
-          <p>Screens, data and the main thing your app does. When the agent goes in circles, you learn how to steer it back.</p>
+        <li class="card">
+          <span class="card__n">02</span>
+          <h3>The skill to keep building</h3>
+          <p>How to direct an AI coding agent: add features, fix what breaks, start your next app.</p>
         </li>
-        <li class="hour">
-          <p class="hour__time"><span class="num">2:00</span>&ndash;<span class="num">3:00</span></p>
-          <h3>Ship version one</h3>
-          <p>Fix what's broken, deploy it to a real web address, and show the room what you made.</p>
+        <li class="card">
+          <span class="card__n">03</span>
+          <h3>It's yours</h3>
+          <p>Your project lives in your own Replit account. Keep building whenever you want.</p>
         </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Club -->
-  <section class="club" id="club" aria-labelledby="club-title">
-    <div class="wrap">
-      <div class="club__head">
-        <p class="eyebrow eyebrow--on-dark">AI Build Club &middot; $79/month</p>
-        <h2 class="section-title" id="club-title">Not another course. A place to keep building.</h2>
-        <p class="club__lede">The boot camp teaches you how to build. The club is where you build. Every week you show up, open Replit, and keep developing your actual software with us and with other builders.</p>
-      </div>
-
-      <div class="club__grid">
-        <ul class="features">
-          <li class="feature">
-            <p class="feature__cadence">Weekly &middot; 90 minutes</p>
-            <h3>Live Build Session</h3>
-            <p>No lectures. Bring your current project and build alongside everyone else, with help in the room when you need it.</p>
-          </li>
-          <li class="feature">
-            <p class="feature__cadence">Weekly</p>
-            <h3>Help Session</h3>
-            <p>Bring your problem. Sign-in not working? Database acting up? AI agent going in circles? We work through it together.</p>
-          </li>
-          <li class="feature">
-            <p class="feature__cadence">Anytime</p>
-            <h3>Private Builder Community</h3>
-            <p>Share progress, ask questions, get feedback, see what other members are making and borrow their solutions.</p>
-          </li>
-          <li class="feature">
-            <p class="feature__cadence">Monthly</p>
-            <h3>Demo Day</h3>
-            <p>Show your app, share your launch, get feedback. It gives everyone something to work toward each month.</p>
-          </li>
-        </ul>
-
-        <figure class="month" aria-labelledby="month-caption">
-          <figcaption id="month-caption" class="month__caption">A month in the club</figcaption>
-          <div class="month__grid" role="table" aria-label="What happens each week of a month in the club">
-            <div class="month__row month__row--head" role="row">
-              <span role="columnheader">Week</span>
-              <span role="columnheader">Build</span>
-              <span role="columnheader">Help</span>
-              <span role="columnheader">Demo</span>
-            </div>
-            <div class="month__row" role="row"><span role="rowheader">1</span><span role="cell" class="chip">90 min</span><span role="cell" class="chip">Live</span><span role="cell" class="chip chip--empty" aria-label="none"></span></div>
-            <div class="month__row" role="row"><span role="rowheader">2</span><span role="cell" class="chip">90 min</span><span role="cell" class="chip">Live</span><span role="cell" class="chip chip--empty" aria-label="none"></span></div>
-            <div class="month__row" role="row"><span role="rowheader">3</span><span role="cell" class="chip">90 min</span><span role="cell" class="chip">Live</span><span role="cell" class="chip chip--empty" aria-label="none"></span></div>
-            <div class="month__row" role="row"><span role="rowheader">4</span><span role="cell" class="chip">90 min</span><span role="cell" class="chip">Live</span><span role="cell" class="chip chip--demo">Demo Day</span></div>
-          </div>
-          <p class="month__note">Plus the community, open every day, and a growing library: session recordings, starter prompts, reusable workflows and deployment walkthroughs.</p>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why live beats more content -->
-  <section class="why" aria-labelledby="why-title">
-    <div class="wrap split">
-      <div class="split__intro">
-        <h2 class="section-title" id="why-title">AI can explain anything. It can't make you finish.</h2>
-        <p>You can already ask AI to teach you a technical concept. What it won't give you is a reason to sit down on Tuesday night and push your app one step closer to launch. That's what the club is for.</p>
-      </div>
-      <dl class="gives">
-        <div><dt>An appointment</dt><dd>A standing time each week that's reserved for building.</dd></div>
-        <div><dt>Peers</dt><dd>Other builders working through the same problems, a few steps ahead or behind you.</dd></div>
-        <div><dt>Accountability</dt><dd>People who'll ask how the app is going, and notice when you show up with progress.</dd></div>
-        <div><dt>A finish line</dt><dd>Demo Day, every month. Something real to aim for.</dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- What people build -->
-  <section class="builds" aria-labelledby="builds-title">
-    <div class="wrap">
-      <div class="builds__head">
-        <h2 class="section-title" id="builds-title">What will you build?</h2>
-        <p>Builders bring the problem they know best: something from their own business or job that they've always wanted software for. A few ideas to get you thinking:</p>
-      </div>
-      <ul class="ideas">
-        <li><span class="ideas__kind">Client tool</span>An intake portal that collects details and documents before the first call</li>
-        <li><span class="ideas__kind">Sales</span>A quote or proposal generator built on your own pricing rules</li>
-        <li><span class="ideas__kind">Operations</span>An internal dashboard that replaces the spreadsheet everyone emails around</li>
-        <li><span class="ideas__kind">Scheduling</span>A booking and reminder tool shaped around how you actually work</li>
-        <li><span class="ideas__kind">AI assistant</span>An assistant that answers questions from your team's own documents</li>
-        <li><span class="ideas__kind">New product</span>The first version of the software business you've been sketching for years</li>
+        <li class="card">
+          <span class="card__n">04</span>
+          <h3>The playbook</h3>
+          <p>The prompts and workflows I use, plus your next steps to get first users.</p>
+        </li>
       </ul>
     </div>
   </section>
 
-  <!-- Closing line from the end of every boot camp -->
-  <section class="quote" aria-label="From the end of the boot camp">
-    <div class="wrap">
-      <blockquote>
-        <p>What you build at the boot camp shouldn't be the last app you ever build.</p>
-        <p class="quote__turn">It should be the <mark>first.</mark></p>
-      </blockquote>
+  <!-- 4. The three hours -->
+  <section class="hours-sec" aria-labelledby="hours-title">
+    <div class="wrap split">
+      <div class="split__intro">
+        <h2 class="section-title" id="hours-title">Three hours. Mostly building.</h2>
+        <p>No lectures. No slides. You build your own app, live, with me guiding you.</p>
+        <a class="btn" data-link="checkout" href="#reserve">Reserve your seat <span class="btn__price">$497</span></a>
+      </div>
+      <ol class="hours" aria-label="How the three hours go">
+        <li class="hour">
+          <p class="hour__time">Hour 1</p>
+          <h3>Start your app</h3>
+          <p>Open Replit, describe your idea in plain English, and watch AI build the first version.</p>
+        </li>
+        <li class="hour">
+          <p class="hour__time">Hour 2</p>
+          <h3>Build</h3>
+          <p>A full hour of hands-on building. Add features, test them, fix them. I help when you get stuck.</p>
+        </li>
+        <li class="hour">
+          <p class="hour__time">Hour 3</p>
+          <h3>Ship it</h3>
+          <p>Publish your app to a live URL and leave with a plan for what to build next.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="pricing" id="pricing" aria-labelledby="pricing-title">
-    <div class="wrap">
-      <h2 class="section-title" id="pricing-title">Start with the boot camp. Stay for the club.</h2>
-      <div class="plans">
-        <article class="plan plan--lead" aria-labelledby="plan-bootcamp">
-          <p class="plan__step">Start here</p>
-          <h3 id="plan-bootcamp">AI App Boot Camp</h3>
-          <p class="plan__price"><span class="num">$497</span><span class="plan__per">one time</span></p>
-          <p class="plan__pitch">Three hours to a working first version of your own app.</p>
-          <ul class="ticks">
-            <li>Live, hands-on, three-hour session</li>
-            <li>Small group of about ten builders</li>
-            <li>Build in Replit with an AI coding agent</li>
-            <li>Leave with your app deployed to the web</li>
-            <li>Opens the door to AI Build Club</li>
-          </ul>
-          <a class="btn btn--block" data-link="bootcamp" href="#pricing">Reserve a boot camp seat</a>
-        </article>
+  <!-- 5. Who it's for -->
+  <section class="fit" aria-labelledby="fit-title">
+    <div class="wrap split">
+      <div class="split__intro">
+        <h2 class="section-title" id="fit-title">For people with ideas, not code.</h2>
+      </div>
+      <ul class="ticks ticks--big">
+        <li>You've had an app idea for years and never built it</li>
+        <li>You've seen what AI can do but haven't shipped anything with it</li>
+        <li>You'd rather build the first version yourself than hire a developer</li>
+        <li>You've never written a line of code. Perfect.</li>
+      </ul>
+    </div>
+  </section>
 
-        <article class="plan" aria-labelledby="plan-club">
-          <p class="plan__step">Then keep going</p>
-          <h3 id="plan-club">AI Build Club</h3>
-          <p class="plan__price"><span class="num">$79</span><span class="plan__per">per month</span></p>
-          <p class="plan__pitch">Keep building, get unstuck, and launch with a community and live expert guidance.</p>
-          <ul class="ticks">
-            <li>Weekly 90-minute Live Build Session</li>
-            <li>Weekly Help Session</li>
-            <li>Private builder community on Skool</li>
-            <li>Monthly Demo Day</li>
-            <li>Library of recordings, prompts and walkthroughs</li>
-          </ul>
-          <a class="btn btn--block btn--ghost" data-link="club" href="#faq">Join as a boot camp graduate</a>
-          <p class="plan__fine">No long-term commitment. Cancel anytime. Membership is open to boot camp graduates first.</p>
-        </article>
+  <!-- 6. Instructor -->
+  <section class="teacher" aria-labelledby="teacher-title">
+    <div class="wrap teacher__grid">
+      <img class="teacher__photo" src="img/brennen-hodge.jpg" width="1000" height="1000" alt="Brennen Hodge" loading="lazy" decoding="async">
+      <div class="teacher__copy">
+        <p class="eyebrow eyebrow--on-dark">Your instructor</p>
+        <h2 class="section-title" id="teacher-title">Brennen Hodge</h2>
+        <p class="teacher__cred">Former VP of Product &middot; Founder of dbVantage</p>
+        <p>I've built products, websites and software from zero. Now I build working apps with AI in hours. In this boot camp I'll show you exactly how, live, on your idea.</p>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq" aria-labelledby="faq-title">
+  <!-- 7. The offer -->
+  <section class="offer" id="reserve" aria-labelledby="offer-title">
+    <div class="wrap">
+      <h2 class="section-title" id="offer-title">Reserve your seat.</h2>
+      <div class="offer__grid">
+        <article class="plan">
+          <p class="plan__step">AI App Boot Camp</p>
+          <p class="plan__when"><span data-event="date">Saturday, November 21</span><br><span data-event="time">10 am &ndash; 1 pm CT</span> &middot; Live online</p>
+          <p class="plan__price"><span class="num">$497</span><span class="plan__per">one time</span></p>
+          <ul class="ticks">
+            <li>3-hour live build session</li>
+            <li>Your own app, from idea to a live URL</li>
+            <li>Hands-on help when you get stuck</li>
+            <li>My prompts and workflows to reuse</li>
+            <li>Your next-steps plan</li>
+            <li>The MVP guarantee</li>
+          </ul>
+          <a class="btn btn--block btn--big" data-link="checkout" href="#reserve">Reserve your seat <span class="btn__price">$497</span></a>
+          <p class="plan__fine">One-time payment. No coding experience needed.</p>
+        </article>
+
+        <aside class="guarantee" aria-labelledby="guarantee-title">
+          <p class="guarantee__badge">MVP guarantee</p>
+          <h3 id="guarantee-title">Leave with a live app, or your money back.</h3>
+          <p>Attend the full three hours and follow along. If your app isn't live on a URL by the end, you get your $497 back.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ: only the objections that stop a purchase -->
+  <section class="faq" aria-labelledby="faq-title">
     <div class="wrap split">
       <div class="split__intro">
         <h2 class="section-title" id="faq-title">Questions</h2>
-        <p>If yours isn't here, ask at the boot camp. Someone else in the room is probably wondering the same thing.</p>
       </div>
       <div class="qa">
         <details open>
           <summary>Do I need to know how to code?</summary>
-          <p>No. The boot camp is built for accomplished professionals who have never written software. You describe what you want in plain English and the AI coding agent writes the code. Your job is to know what to ask for and how to steer.</p>
+          <p>No. You describe what you want in plain English and AI writes the code. Your job is to know what you want and steer.</p>
         </details>
         <details>
-          <summary>What should I bring to the boot camp?</summary>
-          <p>A laptop and an idea for an app you'd actually use. We'll help you set up Replit at the start of the session.</p>
+          <summary>My idea is big. Can I really build it in three hours?</summary>
+          <p>You'll build the MVP: the core features, working and live on a URL. Bigger ideas take more building after the session, and you'll leave knowing how to do it.</p>
         </details>
         <details>
-          <summary>Can I join the club without doing the boot camp?</summary>
-          <p>Not yet. Membership opens first to boot camp graduates, so everyone in the weekly sessions shares the same tools and the same way of working. That keeps the sessions about building, not catching up.</p>
+          <summary>What do I need?</summary>
+          <!-- TODO: confirm which Replit plan attendees need and whether it costs extra. -->
+          <p>A laptop, a reliable internet connection and your idea. You'll get Replit setup steps before the session.</p>
         </details>
         <details>
-          <summary>What does $79 a month include?</summary>
-          <p>Group access: the weekly Live Build Session, the weekly Help Session, the private community, Demo Day and the library. It doesn't include one-on-one development work on your app. The club helps you build your software; it doesn't build it for you.</p>
+          <summary>How does the guarantee work?</summary>
+          <p>Attend live for the full three hours and follow the steps. If your app isn't live on a URL at the end, you get a full refund.</p>
         </details>
         <details>
-          <summary>What if I get stuck between sessions?</summary>
-          <p>Post it in the community. Other members have often hit the same problem and can share what worked. Anything still stuck comes to the next Help Session.</p>
-        </details>
-        <details>
-          <summary>Can I cancel?</summary>
-          <p>Yes, anytime. There's no long-term commitment. Stay as long as the club is helping you build.</p>
+          <summary>Is it live or recorded?</summary>
+          <p>Live, 100% online. You build alongside me in real time.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- Final call -->
+  <!-- 9. Final call -->
   <section class="final" aria-labelledby="final-title">
     <div class="wrap final__inner">
-      <h2 class="final__title" id="final-title">Three hours from now, you could have built software.</h2>
-      <a class="btn" data-link="bootcamp" href="#pricing">Reserve a boot camp seat <span class="btn__price">$497</span></a>
+      <h2 class="final__title" id="final-title">Three hours from now, your idea could be <mark>live.</mark></h2>
+      <a class="btn btn--big" data-link="checkout" href="#reserve">Reserve your seat <span class="btn__price">$497</span></a>
+      <p class="final__fine">MVP on a URL, or your money back.</p>
     </div>
   </section>
 
@@ -321,14 +225,14 @@
 
 <footer class="foot">
   <div class="wrap foot__inner">
-    <a class="mark" href="#top" aria-label="AI Build Club, back to top">
-      <span class="mark__glyph" aria-hidden="true">&gt;_</span>
+    <span class="mark" aria-hidden="true">
+      <span class="mark__glyph">&gt;_</span>
       <span class="mark__name">AI Build Club</span>
-    </a>
-    <p class="foot__line">AI App Boot Camp &middot; AI Build Club &middot; You're a builder.</p>
-    <p class="foot__copy">&copy; <span data-year>2026</span> AI Build Club. Replit and Skool are trademarks of their respective owners.</p>
+    </span>
+    <p class="foot__copy">&copy; <span data-year>2026</span> AI Build Club. Replit is a trademark of its owner.</p>
   </div>
 </footer>
+
 
 <script src="app.js"></script>
 </body>

@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="styles.css">
 <style>
   .model { padding-block: clamp(2.5rem, 2rem + 3vw, 5rem); display: grid; gap: clamp(2.5rem, 2rem + 2vw, 4rem); }
@@ -26,7 +26,7 @@
   @media (min-width: 560px) { .results { grid-template-columns: 1fr 1fr; } }
   .result { display: grid; gap: 0.35rem; padding: 1.3rem 1.4rem; background: var(--paper); }
   .result dt { font-family: var(--f-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); }
-  .result dd { margin: 0; font-family: var(--f-display); font-weight: 800; font-variation-settings: "wdth" 75; font-size: clamp(2rem, 1.6rem + 1.4vw, 2.8rem); line-height: 1; font-variant-numeric: tabular-nums; }
+  .result dd { margin: 0; font-family: var(--f-display); font-weight: 700; font-size: clamp(2rem, 1.6rem + 1.4vw, 2.8rem); line-height: 1; font-variant-numeric: tabular-nums; }
   .result small { font-size: var(--step--1); color: var(--ink-soft); }
   .result--key { background: var(--marker); color: var(--on-marker); }
   .result--key dt, .result--key small { color: var(--on-marker); }
@@ -40,7 +40,7 @@
   .duo { display: grid; gap: 2.5rem; }
   @media (min-width: 900px) { .duo { grid-template-columns: 1fr 1fr; } }
   .duo > section { min-width: 0; }
-  .duo h2 { font-family: var(--f-display); font-size: var(--step-1); font-weight: 750; font-variation-settings: "wdth" 85; margin-bottom: 1rem; }
+  .duo h2 { font-family: var(--f-display); font-size: var(--step-1); font-weight: 650; margin-bottom: 1rem; }
   .loop { display: grid; gap: 0.5rem; counter-reset: loop; }
   .loop li { counter-increment: loop; display: grid; grid-template-columns: 2rem 1fr; gap: 0.5rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
   .loop li::before { content: counter(loop); font-family: var(--f-mono); font-weight: 600; color: var(--build); }
