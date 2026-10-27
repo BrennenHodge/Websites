@@ -474,7 +474,7 @@ mark {
 }
 .teacher__copy { display: grid; gap: 1rem; max-width: 36rem; min-width: 0; }
 .teacher__cred { font-family: var(--f-mono); font-size: var(--step--1); color: var(--marker); }
-.teacher__copy p:last-child { color: var(--on-band-soft); font-size: var(--step-1); line-height: 1.5; }
+.teacher__bio { color: var(--on-band-soft); font-size: var(--step-1); line-height: 1.5; }
 
 /* Offer */
 .offer { padding-block: var(--section); }
