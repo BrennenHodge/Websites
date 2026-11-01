@@ -28,13 +28,13 @@
 <main id="main" class="thanks">
   <div class="wrap thanks__inner">
     <p class="eyebrow">Session booked</p>
-    <h1 class="thanks__title">You're booked. <mark>Let's build.</mark></h1>
+    <h1 class="thanks__title">You're booked. <mark>Let's get to work.</mark></h1>
     <p class="thanks__lede">Your confirmation and calendar invite are on their way to your inbox. Here's what happens next.</p>
 
     <ol class="steps">
       <li class="step">
-        <h2>Tell me about your idea</h2>
-        <p>Two minutes now saves us twenty in the session. I'll read it before we meet.</p>
+        <h2>Tell me what you want to accomplish</h2>
+        <p>Two minutes now saves us twenty in the session. I'll read it and tailor our time to you.</p>
         <form class="intake" data-intake-form novalidate>
           <div class="intake__row">
             <label class="intake__field">
@@ -46,29 +46,33 @@
               <input class="intake__input" type="email" name="email" autocomplete="email" required>
             </label>
           </div>
+          <fieldset class="intake__field intake__topics">
+            <legend>What would you like help with? Pick any.</legend>
+            <label><input type="checkbox" name="topics" value="tools"> Learning the AI tools</label>
+            <label><input type="checkbox" name="topics" value="build"> Building an app or website</label>
+            <label><input type="checkbox" name="topics" value="automate"> Automating my work</label>
+            <label><input type="checkbox" name="topics" value="business"> Using AI in my business</label>
+            <label><input type="checkbox" name="topics" value="strategy"> Not sure yet, help me find where to start</label>
+          </fieldset>
           <label class="intake__field">
-            <span>What's your idea?</span>
-            <textarea class="intake__input" name="idea" rows="4" required placeholder="A few sentences in plain English."></textarea>
+            <span>Tell me more about your goals</span>
+            <textarea class="intake__input" name="goals" rows="4" required placeholder="What would make these two hours a win for you?"></textarea>
           </label>
           <label class="intake__field">
-            <span>Who is it for?</span>
-            <input class="intake__input" type="text" name="audience" placeholder="Your customers, your team, people like you…">
+            <span>What do you do?</span>
+            <input class="intake__input" type="text" name="work" placeholder="Your role, your business, your industry">
           </label>
           <label class="intake__field">
-            <span>The 2 or 3 things it must do</span>
-            <textarea class="intake__input" name="features" rows="3"></textarea>
-          </label>
-          <label class="intake__field">
-            <span>Any apps or sites like it? Links welcome.</span>
-            <input class="intake__input" type="text" name="examples">
-          </label>
-          <label class="intake__field">
-            <span>Have you built anything with AI before?</span>
+            <span>How much have you used AI?</span>
             <select class="intake__input" name="experience">
-              <option value="never">No, this is my first time</option>
-              <option value="a-little">A little</option>
-              <option value="regularly">Yes, regularly</option>
+              <option value="never">Hardly at all</option>
+              <option value="a-little">A little, like ChatGPT now and then</option>
+              <option value="regularly">Regularly</option>
             </select>
+          </label>
+          <label class="intake__field">
+            <span>Anything I should look at first? Links welcome.</span>
+            <input class="intake__input" type="text" name="links" placeholder="Your website, an app idea, a tool you're using…">
           </label>
           <input class="lead__trap" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="intake__actions">
@@ -96,7 +100,7 @@
       <span class="mark__glyph">&gt;_</span>
       <span class="mark__name">AI Build Club</span>
     </span>
-    <p class="foot__copy">&copy; <span data-year>2026</span> AI Build Club. Replit is a trademark of its owner.</p>
+    <p class="foot__copy">&copy; <span data-year>2026</span> AI Build Club.</p>
   </div>
 </footer>
 

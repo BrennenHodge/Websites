@@ -11,11 +11,13 @@ const CONFIG = {
   pixelHosts: ["ai-build-club.pages.dev"],
   leadEndpoint: "/api/lead",
   intakeEndpoint: "/api/intake",
-  // Headline per ad: /?angle=experience. Each is [before, highlighted, after].
+  // Headline per ad: /?angle=business. Each is [before, highlighted, after]. Every angle sells the same session.
   angles: {
-    experience: ["I've spent 16 years learning how to build software. ", "I'll show you how to start building yours in 2 hours.", ""],
-    idea: ["That app idea you keep putting off? ", "Let's build it in 2 hours.", ""],
-    developer: ["Skip the developer. ", "Build your app with me", " in 2 hours."],
+    experience: ["16 years building software and companies. ", "Two hours focused on you.", ""],
+    business: ["Put AI to work ", "in your business.", ""],
+    build: ["Have an idea? ", "Let's build it with AI.", ""],
+    automate: ["Hand your busywork ", "to AI.", ""],
+    beginner: ["New to AI? ", "Learn it one-on-one.", ""],
   },
 };
 
@@ -60,7 +62,7 @@ if (pixelOn) {
   document,'script','https://connect.facebook.net/en_US/fbevents.js');
   fbq("init", CONFIG.metaPixelId);
   fbq("track", "PageView");
-  if (page === "sales") fbq("track", "ViewContent", { content_name: "Private AI app-building session", value: CONFIG.price, currency: "USD" });
+  if (page === "sales") fbq("track", "ViewContent", { content_name: "Private AI coaching", value: CONFIG.price, currency: "USD" });
 }
 const track = (name, data = {}, eventID) => {
   if (pixelOn && window.fbq) fbq("track", name, data, eventID ? { eventID } : undefined);
@@ -123,7 +125,7 @@ document.querySelectorAll("[data-lead-form]").forEach((form) => {
       });
       const out = await res.json().catch(() => ({}));
       if (!res.ok || !out.ok) throw new Error(out.error || "Something went wrong. Please try again.");
-      track("Lead", { content_name: "Private AI app-building session" }, eventId);
+      track("Lead", { content_name: "Private AI coaching" }, eventId);
       store.set("abc-email", email);
       store.set("abc-lead", "1");
       form.replaceChildren(Object.assign(document.createElement("p"), {
@@ -152,7 +154,7 @@ if (exitDialog && typeof exitDialog.showModal === "function" && matchMedia("(poi
   exitDialog.addEventListener("click", (e) => { if (e.target === exitDialog) exitDialog.close(); });
 }
 
-// Thank-you page: count the booking once, then collect the idea questionnaire.
+// Thank-you page: count the booking once, then collect the goals questionnaire.
 if (page === "thanks") {
   // Booking tools add their own ids to the redirect (Stripe, Calendly, Cal.com); ?booked=1 works for any of them.
   const bookingId = ["session_id", "invitee_uuid", "uid", "bookingId"].map((k) => params.get(k)).find(Boolean);
@@ -160,7 +162,7 @@ if (page === "thanks") {
     const key = `abc-purchase-${bookingId || "booked"}`;
     let seen = false;
     try { seen = localStorage.getItem(key) === "1"; localStorage.setItem(key, "1"); } catch {}
-    if (!seen) track("Purchase", { value: CONFIG.price, currency: "USD", content_name: "Private AI app-building session" }, bookingId);
+    if (!seen) track("Purchase", { value: CONFIG.price, currency: "USD", content_name: "Private AI coaching" }, bookingId);
   }
 
   const form = document.querySelector("[data-intake-form]");
@@ -175,15 +177,16 @@ if (page === "thanks") {
     const button = form.querySelector('button[type="submit"]');
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const data = Object.fromEntries(new FormData(form));
+      const fd = new FormData(form);
+      const data = { ...Object.fromEntries(fd), topics: fd.getAll("topics") };
       if (!validEmail(String(data.email || "").trim())) {
         msg.textContent = "Please enter the email you booked with.";
         form.email.focus();
         return;
       }
-      if (!String(data.idea || "").trim()) {
-        msg.textContent = "Tell me a little about your idea.";
-        form.idea.focus();
+      if (!String(data.goals || "").trim()) {
+        msg.textContent = "Tell me a little about what you want help with.";
+        form.goals.focus();
         return;
       }
       button.disabled = true;
@@ -198,7 +201,7 @@ if (page === "thanks") {
         if (!res.ok || !out.ok) throw new Error(out.error || "Something went wrong. Please try again.");
         form.replaceChildren(Object.assign(document.createElement("p"), {
           className: "lead__done",
-          textContent: "Thanks. I'll read this before we meet, so we can start building right away.",
+          textContent: "Thanks. I'll read this before we meet and tailor the session to you.",
         }));
       } catch (err) {
         msg.textContent = err.message;

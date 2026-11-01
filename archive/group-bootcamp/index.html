@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI App Boot Camp · AI Build Club</title>
+<meta name="description" content="Turn your idea into a working app in 3 hours. No coding. Live online. Leave with your app live on a real URL, or your money back.">
+<meta name="theme-color" content="#F3F4F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101217" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Turn your idea into a working app in 3 hours.">
+<meta property="og:description" content="No coding. No developer. Build it yourself with AI, live online. Your app live on a URL, or your money back.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="sales">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Ad landing page: one offer, one action. No nav links to leak traffic. -->
+<header class="bar">
+  <div class="wrap bar__inner">
+    <a class="mark" href="#top" aria-label="AI Build Club, back to top">
+      <span class="mark__glyph" aria-hidden="true">&gt;_</span>
+      <span class="mark__name">AI Build Club</span>
+    </a>
+    <a class="btn btn--small" data-link="checkout" href="#reserve">Save my seat</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 1. Big promise + the sales video. ?angle= swaps the headline to match the ad (see app.js) -->
+  <section class="hero" id="top">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow">For professionals and entrepreneurs at heart</p>
+        <h1 class="hero__title" data-headline>Turn your idea into a <mark>working app</mark> in 3 hours.</h1>
+        <p class="hero__lede">No coding. No developer. In this live online boot camp, you build it yourself with AI while I guide you step by step. You leave with your app live on a real URL, or you get your money back.</p>
+        <div class="hero__actions">
+          <a class="btn btn--big" data-link="checkout" href="#reserve">Save my seat <span class="btn__price">$497</span></a>
+          <p class="hero__when"><span class="nowrap" data-event="date">Saturday, November 21</span> <span class="sep" aria-hidden="true">&middot;</span> <span class="nowrap" data-event="time">10 am &ndash; 1 pm CT</span> <span class="sep" aria-hidden="true">&middot;</span> <span class="nowrap">Live online</span></p>
+        </div>
+        <ul class="ticks hero__facts" aria-label="Boot camp at a glance">
+          <li>No coding needed</li>
+          <li>Your app live in 3 hours</li>
+          <li>Money-back guarantee</li>
+        </ul>
+      </div>
+
+      <figure class="demo">
+        <!-- TODO: 2–4 minute sales video (you on camera + a live build). Set CONFIG.video in app.js. -->
+        <div class="demo__frame" data-video="video">
+          <div class="demo__ph">
+            <span class="demo__play" aria-hidden="true"></span>
+            <p class="demo__title">Watch this first</p>
+            <p class="demo__tag">Sales video placeholder &middot; 2&ndash;4 min</p>
+          </div>
+        </div>
+        <figcaption class="demo__cap">How you'll go from idea to live app in three hours.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 2. Problem, why the usual ways fail, the shift -->
+  <section class="problem" aria-labelledby="problem-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="section-title" id="problem-title">Good ideas die in the notes app.</h2>
+        <p>You know it could work. But you don't code, so it sits there. Another year goes by.</p>
+      </div>
+      <div class="compare">
+        <div class="compare__col">
+          <h3>The old way</h3>
+          <ul class="crosses">
+            <li><strong>Learn to code.</strong> Years before you build anything real.</li>
+            <li><strong>YouTube tutorials.</strong> Hours of rabbit holes. Nothing finished.</li>
+            <li><strong>Hire a developer.</strong> Thousands of dollars and months of waiting.</li>
+          </ul>
+        </div>
+        <div class="compare__col compare__col--new">
+          <h3>The new way</h3>
+          <ul class="ticks">
+            <li><strong>Hours, not months.</strong> Talk through your idea and AI builds it.</li>
+            <li><strong>English is the new code.</strong> No programming. No developer to hire.</li>
+            <li><strong>Cheap to change.</strong> Iterate fast, scrap it, or build your next idea in parallel.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="problem__turn"><strong>Here's what changed:</strong> AI now writes the code. The hard part is knowing which tools and shortcuts actually work. I test them all day, every day. In three hours I'll hand you what works, on your own idea.</p>
+    </div>
+  </section>
+
+  <!-- 3. Proof: real apps built with this process -->
+  <section class="proof" aria-labelledby="proof-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="section-title" id="proof-title">Real apps. Built with AI.</h2>
+        <p>A few of the apps I've built with the same process you'll learn. No dev team.</p>
+      </div>
+      <ul class="apps">
+        <li class="app">
+          <img class="app__shot" src="img/apps/bidcrew.jpg" width="1280" height="720" alt="BidCrew home page: Win more DOT work. Bid smarter." loading="lazy" decoding="async">
+          <div class="app__body">
+            <p class="app__kind">Software for contractors</p>
+            <h3>BidCrew</h3>
+            <p>Shows road contractors who they're bidding against and predicts a winning price. AI agents read the bid documents for them.</p>
+            <p class="app__meta">80+ pages &middot; 8 AI agents &middot; <a class="link" href="https://bidcrew.ai" target="_blank" rel="noopener">bidcrew.ai</a></p>
+          </div>
+        </li>
+        <li class="app">
+          <img class="app__shot" src="img/apps/playerbio.jpg" width="1280" height="800" alt="Playerbio home page: See exactly what to fix in your pitcher's delivery." loading="lazy" decoding="async">
+          <div class="app__body">
+            <p class="app__kind">AI video coaching</p>
+            <h3>Playerbio</h3>
+            <p>Film a pitch on your phone. AI tracks the whole body, finds what to fix, pins it on the video and gives you drills.</p>
+            <p class="app__meta">Live in about 2 days &middot; <a class="link" href="https://playerbio.co" target="_blank" rel="noopener">playerbio.co</a></p>
+          </div>
+        </li>
+        <li class="app">
+          <img class="app__shot" src="img/apps/agentwebkit.jpg" width="1280" height="800" alt="AgentWebkit home page: Paste your site. See what AI can and can't do with it." loading="lazy" decoding="async">
+          <div class="app__body">
+            <p class="app__kind">Scan-to-checkout SaaS</p>
+            <h3>AgentWebkit</h3>
+            <p>Grades any website on whether AI assistants can find and contact the business, then sells the fixes from a cart.</p>
+            <p class="app__meta">Scan, report, cart and dashboard</p>
+          </div>
+        </li>
+        <li class="app">
+          <img class="app__shot" src="img/apps/throwhitrun.jpg" width="1280" height="800" alt="Throw, Hit &amp; Run home page with a live score readout." loading="lazy" decoding="async">
+          <div class="app__body">
+            <p class="app__kind">Sports events</p>
+            <h3>Throw, Hit &amp; Run</h3>
+            <p>A youth baseball combine with a score calculator, leaderboards and team standings.</p>
+            <p class="app__meta">Built in about 3 days &middot; <a class="link" href="https://throwhitrun.com" target="_blank" rel="noopener">throwhitrun.com</a></p>
+          </div>
+        </li>
+      </ul>
+      <figure class="demo demo--wide">
+        <!-- TODO: 45-second screen recording. Set CONFIG.demo in app.js. -->
+        <div class="demo__frame" data-video="demo">
+          <div class="demo__ph">
+            <span class="demo__play" aria-hidden="true"></span>
+            <p class="demo__title">Watch an app get built in 45 seconds</p>
+            <p class="demo__tag">Video placeholder</p>
+          </div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 4. What you leave with -->
+  <section class="leave" aria-labelledby="leave-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="section-title" id="leave-title">Walk in with an idea. Walk out with a live app.</h2>
+        <p>By the end, you'll send someone a link and say "I built this." Then you'll do it again for your next idea, and the one after that.</p>
+      </div>
+      <ul class="cards">
+        <li class="card">
+          <span class="card__n">01</span>
+          <h3>Your app, live on a URL</h3>
+          <p>Your MVP: a real web address you can send to customers, partners or your team the same day.</p>
+        </li>
+        <li class="card">
+          <span class="card__n">02</span>
+          <h3>Your app factory</h3>
+          <p>A repeatable process to turn idea after idea into live apps, so you can test them all.</p>
+        </li>
+        <li class="card">
+          <span class="card__n">03</span>
+          <h3>My shortcuts</h3>
+          <p>What works, what doesn't, and which tools are worth your time. Skip the trial and error.</p>
+        </li>
+        <li class="card">
+          <span class="card__n">04</span>
+          <h3>It's yours</h3>
+          <p>Your apps live in your own Replit account. Keep building whenever you want.</p>
+        </li>
+      </ul>
+      <p class="leave__scope">Big idea? Good. A client portal, a tool for your team, even a marketplace. For most ideas, three hours gets you the whole working app. If yours is bigger, I'll help you simplify it to the core.</p>
+    </div>
+  </section>
+
+  <!-- 5. The method = the three hours -->
+  <section class="hours-sec" aria-labelledby="hours-title">
+    <div class="wrap split">
+      <div class="split__intro">
+        <p class="eyebrow">Your three hours</p>
+        <h2 class="section-title" id="hours-title">The App Factory method</h2>
+        <p>No lectures. No theory. You build your own app, live, with me guiding you.</p>
+        <a class="btn" data-link="checkout" href="#reserve">Save my seat <span class="btn__price">$497</span></a>
+      </div>
+      <ol class="hours" aria-label="The App Factory method">
+        <li class="hour">
+          <p class="hour__time">Hour 1</p>
+          <h3>Shape it</h3>
+          <p>Cut your idea to the core that matters. Describe it in plain English and watch AI build the first version.</p>
+        </li>
+        <li class="hour">
+          <p class="hour__time">Hour 2</p>
+          <h3>Build it</h3>
+          <p>Add the features that matter, test them, fix them. I help when you get stuck.</p>
+        </li>
+        <li class="hour">
+          <p class="hour__time">Hour 3</p>
+          <h3>Launch it</h3>
+          <p>Publish your app to a real URL people can use.</p>
+        </li>
+        <li class="hour">
+          <p class="hour__time">After</p>
+          <h3>Repeat it</h3>
+          <p>Run the same process on your next idea, and the one after that.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 6. Testimonials: approved quotes only. Neal's is the same quote as on Growth Academy. -->
+  <section class="voices" aria-labelledby="voices-title">
+    <div class="wrap">
+      <h2 class="section-title" id="voices-title">What people say</h2>
+      <ul class="quotes">
+        <li class="quote">
+          <p class="quote__text">&ldquo;Brennen has helped me build an app I've always wanted to build. He's given me tips and advice and helped me along the way. He's definitely saved me a lot of time.&rdquo;</p>
+          <p class="quote__who"><span class="quote__avatar" aria-hidden="true">RW</span><span><strong>Reed Wallace</strong><br>Certified Registered Nurse Anesthetist</span></p>
+        </li>
+        <li class="quote">
+          <p class="quote__text">&ldquo;Nothing replaces the human touch, but if you're not using AI in your business, you're going to get left behind. Brennen gives you the know-how to make the complicated simple, so you can leverage AI in your own business without losing the things that matter most.&rdquo;</p>
+          <p class="quote__who"><span class="quote__avatar" aria-hidden="true">NK</span><span><strong>Nick Kelsoe</strong><br>VP of Sales, VOXO</span></p>
+        </li>
+        <li class="quote">
+          <p class="quote__text">&ldquo;I run an exterior cleaning business, not a tech company. I walked out with clear direction on automating marketing, and CRM inputs. Brennen is great to run ideas past, and usually has insight I haven't thought of yet.&rdquo;</p>
+          <p class="quote__who"><span class="quote__avatar" aria-hidden="true">NB</span><span><strong>Neal Bontrager</strong><br>Owner, Klean Softwash</span></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Who it's for -->
+  <section class="fit" aria-labelledby="fit-title">
+    <div class="wrap split">
+      <div class="split__intro">
+        <h2 class="section-title" id="fit-title">This is for you if&hellip;</h2>
+      </div>
+      <div>
+        <ul class="ticks ticks--big">
+          <li>You have ideas for apps or tools, and they've been sitting there</li>
+          <li>You're great at what you do, but you've never written code</li>
+          <li>You'd rather build the first version yourself than pay someone</li>
+          <li>You want to see what AI can really do, on your own idea</li>
+        </ul>
+        <p class="fit__not">Not for developers looking for advanced techniques. This is for people with ideas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Instructor story -->
+  <section class="teacher" aria-labelledby="teacher-title">
+    <div class="wrap teacher__grid">
+      <img class="teacher__photo" src="img/brennen-hodge.jpg" width="1000" height="1000" alt="Brennen Hodge" loading="lazy" decoding="async">
+      <div class="teacher__copy">
+        <p class="eyebrow eyebrow--on-dark">Your guide</p>
+        <h2 class="section-title" id="teacher-title">Brennen Hodge</h2>
+        <p class="teacher__cred">Former VP of Product &middot; Founder of dbVantage</p>
+        <p class="teacher__bio">I spend about 10 hours a day building with the newest AI tools. I build apps in a day just to see what's possible, then throw them away.</p>
+        <p class="teacher__bio">I've already made the mistakes. In this boot camp I give you every shortcut: what works, what doesn't, and the exact process I use. You get the results of those 10-hour days in three hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. The offer: value stack, bonus, anchor, price, urgency, guarantee -->
+  <section class="offer" id="reserve" aria-labelledby="offer-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="section-title" id="offer-title">Everything you get</h2>
+        <p>Hiring a developer for a first version: thousands of dollars and months. This: $497 and three hours.</p>
+      </div>
+      <div class="offer__grid">
+        <article class="plan">
+          <p class="plan__countdown" data-countdown hidden>Starts in <strong data-countdown-value></strong></p>
+          <p class="plan__step">AI App Boot Camp</p>
+          <p class="plan__when"><span data-event="date">Saturday, November 21</span><br><span data-event="time">10 am &ndash; 1 pm CT</span> &middot; Live online</p>
+          <ul class="ticks">
+            <li>The 3-hour live build session</li>
+            <li>Your own app, live on a real URL</li>
+            <li>Your app factory: the process to build the next one</li>
+            <li>My shortcuts, prompts and workflows</li>
+            <li>Live help when you get stuck</li>
+            <li>The full recording to rewatch</li>
+            <li>The Live App Guarantee</li>
+          </ul>
+          <div class="bonus" data-bonus hidden>
+            <p class="bonus__tag" data-bonus-tag></p>
+            <p class="bonus__title" data-bonus-title></p>
+            <p class="bonus__detail" data-bonus-detail></p>
+          </div>
+          <p class="plan__price"><span class="num">$497</span><span class="plan__per">one time</span></p>
+          <a class="btn btn--block btn--big" data-link="checkout" href="#reserve">Save my seat</a>
+          <p class="plan__fine" data-seats hidden></p>
+        </article>
+
+        <aside class="guarantee" aria-labelledby="guarantee-title">
+          <p class="guarantee__badge">Live App Guarantee</p>
+          <h3 id="guarantee-title">Your app is live on a URL, or you pay nothing.</h3>
+          <p>Show up for the three hours and follow along. If your app isn't live on a real URL by the end, I'll refund every dollar. The risk is on me.</p>
+        </aside>
+      </div>
+
+      <!-- Catch the visitors who aren't ready to buy -->
+      <div class="notready">
+        <div class="notready__copy">
+          <h3>Not ready yet?</h3>
+          <p>Get the details by email, plus a reminder before the boot camp.</p>
+        </div>
+        <form class="lead" data-lead-form="inline" novalidate>
+          <label class="sr-only" for="lead-email">Email</label>
+          <input id="lead-email" class="lead__input" type="email" name="email" autocomplete="email" placeholder="you@company.com" required>
+          <input class="lead__trap" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn" type="submit">Email me the details</button>
+          <p class="lead__msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ: only the objections that stop a purchase -->
+  <section class="faq" aria-labelledby="faq-title">
+    <div class="wrap split">
+      <div class="split__intro">
+        <h2 class="section-title" id="faq-title">Questions</h2>
+      </div>
+      <div class="qa">
+        <details open>
+          <summary>Do I need to know how to code?</summary>
+          <p>No. If you can describe your idea in an email, you can build it. AI writes the code. You steer.</p>
+        </details>
+        <details>
+          <summary>My idea is big. Can I really build it in three hours?</summary>
+          <p>For most ideas, yes. You'll build a working MVP, and for most people that's the full app, ready to polish. If yours is too complex for three hours, I'll help you simplify it so you ship the core of it, live.</p>
+        </details>
+        <details>
+          <summary>Got more than one idea?</summary>
+          <p>Bring your favorite and build it live. You leave with the process to build the rest fast, so you can test them all.</p>
+        </details>
+        <details>
+          <summary>What if I get stuck?</summary>
+          <p>I help you live, in the session. Getting unstuck with AI is one of the skills you'll leave with.</p>
+        </details>
+        <details>
+          <summary>What do I need?</summary>
+          <!-- TODO: confirm which Replit plan attendees need and whether it costs extra. -->
+          <p>A laptop, a reliable internet connection and your idea. You'll get simple setup steps before the session.</p>
+        </details>
+        <details>
+          <summary>How does the guarantee work?</summary>
+          <p>Attend live for the full three hours and follow the steps. If your app isn't live on a URL at the end, you get a full refund.</p>
+        </details>
+        <details>
+          <summary>Is it live or recorded?</summary>
+          <p>Live, 100% online. You build alongside me in real time and ask questions as you go. Can't make it? You get the recording.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Final call: the two paths -->
+  <section class="final" aria-labelledby="final-title">
+    <div class="wrap final__inner">
+      <h2 class="final__title" id="final-title">A year from now, your idea is either still an idea, or <mark>it's live.</mark></h2>
+      <p class="final__sub">Three hours decides which.</p>
+      <a class="btn btn--big" data-link="checkout" href="#reserve">Save my seat <span class="btn__price">$497</span></a>
+      <p class="final__fine">Live on a URL, or your money back.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <span class="mark" aria-hidden="true">
+      <span class="mark__glyph">&gt;_</span>
+      <span class="mark__name">AI Build Club</span>
+    </span>
+    <p class="foot__copy">&copy; <span data-year>2026</span> AI Build Club. Replit is a trademark of its owner.</p>
+  </div>
+</footer>
+
+<!-- Exit intent (desktop): one last chance to leave an email -->
+<dialog class="exit" data-exit aria-labelledby="exit-title">
+  <button class="exit__close" type="button" data-exit-close aria-label="Close">&times;</button>
+  <p class="eyebrow">Before you go</p>
+  <h2 class="exit__title" id="exit-title">Not ready to grab a seat?</h2>
+  <p class="exit__sub">Get the details by email, plus a reminder before the boot camp.</p>
+  <form class="lead" data-lead-form="exit" novalidate>
+    <label class="sr-only" for="exit-email">Email</label>
+    <input id="exit-email" class="lead__input" type="email" name="email" autocomplete="email" placeholder="you@company.com" required>
+    <input class="lead__trap" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn" type="submit">Email me the details</button>
+    <p class="lead__msg" role="status" aria-live="polite"></p>
+  </form>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

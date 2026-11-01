@@ -1,4 +1,4 @@
-// POST /api/intake: saves the idea questionnaire a client fills in after booking.
+// POST /api/intake: saves the goals questionnaire a client fills in after booking.
 // Stored in the same KV as leads (binding LEADS) under intake:<email>:<time>, with a short
 // summary in the key metadata so `wrangler kv key list --prefix intake:` shows who sent what.
 // Optional Pages secret INTAKE_WEBHOOK_URL forwards each answer as JSON (email, Slack, CRM).
@@ -23,8 +23,10 @@ export async function onRequestPost({ request, env, waitUntil }) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return json({ ok: false, error: "Please enter the email you booked with." }, 400);
   }
-  const idea = clip(data.idea, 4000);
-  if (!idea) return json({ ok: false, error: "Tell me a little about your idea." }, 400);
+  const goals = clip(data.goals, 4000);
+  if (!goals) return json({ ok: false, error: "Tell me a little about what you want help with." }, 400);
+  const allowedTopics = ["tools", "build", "automate", "business", "strategy"];
+  const topics = (Array.isArray(data.topics) ? data.topics : []).filter((t) => allowedTopics.includes(t));
 
   const utm = {};
   for (const [k, v] of Object.entries(data.utm || {})) {
@@ -35,18 +37,18 @@ export async function onRequestPost({ request, env, waitUntil }) {
   const intake = {
     email,
     name: clip(data.name, 100),
-    idea,
-    audience: clip(data.audience, 500),
-    features: clip(data.features, 2000),
-    examples: clip(data.examples, 1000),
+    topics,
+    goals,
+    work: clip(data.work, 500),
     experience: clip(data.experience, 20),
+    links: clip(data.links, 1000),
     bookingId: clip(data.bookingId, 120),
     ...utm,
     at,
   };
 
   await env.LEADS.put(`intake:${email}:${at}`, JSON.stringify(intake), {
-    metadata: { email, name: intake.name, idea: idea.slice(0, 200), at },
+    metadata: { email, name: intake.name, topics, goals: goals.slice(0, 200), at },
   });
 
   if (env.INTAKE_WEBHOOK_URL) {

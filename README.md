@@ -1,8 +1,10 @@
 # AI Build Club website
 
-Ad landing page (Meta ads) for one offer: a **private, one-on-one AI app-building session**, two hours, $697, live online. The client brings an idea and leaves with a working prototype, plus Brennen's guidance from 16 years of building software and companies.
+Ad landing page (Meta ads) for one offer: **private, one-on-one AI coaching**, two hours, $697, live online, with Brennen Hodge (16 years building software and companies). Each session is tailored to the client's goals: learning the AI tools, automating work, building something, or using AI in their business. No technical experience needed.
 
-Funnel: ad → sales page (`/`) → booking tool (pick a time + pay) → thank-you page (`/thanks`) with the idea questionnaire. Visitors who don't book can leave an email (inline form under the offer, plus an exit-intent popup on desktop).
+Funnel: ad → sales page (`/`) → booking tool (pick a time + pay) → thank-you page (`/thanks`) with a short goals questionnaire. Visitors who don't book can leave an email (inline form under the offer, plus an exit-intent popup on desktop).
+
+The earlier **group bootcamp** version ($497, three hours, one date) is archived in `archive/group-bootcamp/` and the git tag `group-bootcamp-v1`. It's not published; see that folder's README to bring it back.
 
 No build step. Deploys to Cloudflare Pages (`wrangler.toml` holds the config):
 
@@ -13,12 +15,13 @@ npx wrangler pages deploy --branch main
 ```
 public/            everything that gets published
   index.html       the sales page
-  thanks.html      after-booking page: Purchase event and the idea questionnaire
+  thanks.html      after-booking page: Purchase event and the goals questionnaire
   styles.css       design tokens (light + dark), layout and components
   app.js           CONFIG (price, booking link, videos, pixel, headline angles) and page behavior
-  img/             instructor photo, app screenshots (img/apps/)
+  img/             coach photo, app screenshots (img/apps/)
 functions/api/lead.js     POST /api/lead: saves "not ready yet" emails to KV
-functions/api/intake.js   POST /api/intake: saves the idea questionnaire to KV
+functions/api/intake.js   POST /api/intake: saves the goals questionnaire to KV
+archive/group-bootcamp/   the group bootcamp page, parked for later (not published)
 model.html         internal revenue model calculator (not published)
 ```
 
@@ -30,9 +33,9 @@ model.html         internal revenue model calculator (not published)
 2. `video` (personal intro) and `demo` (45-second build): .mp4 URLs.
 3. `metaPixelId`: loads the pixel on `pixelHosts` only. Events: PageView, ViewContent, Lead, InitiateCheckout (book click), Purchase (on `/thanks`, once per booking).
 
-Also: the satisfaction guarantee (TODO in the offer section, once its terms are defined) and which tools or plans clients need (TODO in the FAQ and on `/thanks`).
+Also: the satisfaction guarantee (TODO in the offer section, once its terms are defined) and the rescheduling and required-tools FAQ answers (TODO, once those policies are set).
 
-Headline per ad: `/?angle=experience`, `/?angle=idea`, `/?angle=developer` (see `CONFIG.angles`).
+Headline per ad: `/?angle=experience`, `business`, `build`, `automate`, `beginner` (see `CONFIG.angles`). Every angle leads to the same session.
 
 ## Leads and questionnaires
 
