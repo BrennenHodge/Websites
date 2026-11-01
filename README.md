@@ -1,5 +1,7 @@
 # AI Build Club website
 
+Live at https://aibuildclub.co (Cloudflare Pages project `ai-build-club`; www and ai-build-club.pages.dev redirect there via `functions/_middleware.js`).
+
 Ad landing page (Meta ads) for one offer: **private, one-on-one AI coaching**, two hours, $697, live online, with Brennen Hodge (16 years building software and companies). Each session is tailored to the client's goals: learning the AI tools, automating work, building something, or using AI in their business. No technical experience needed.
 
 Funnel: ad → sales page (`/`) → booking tool (pick a time + pay) → thank-you page (`/thanks`) with a short goals questionnaire. Visitors who don't book can leave an email (inline form under the offer, plus an exit-intent popup on desktop).
@@ -28,7 +30,7 @@ model.html         internal revenue model calculator (not published)
 ## Placeholders to fill (in `public/app.js` → `CONFIG`)
 
 1. `booking`: the booking link. Use Cal.com or Calendly with Stripe payment turned on, so clients pick a time and pay in one step. Set the after-booking redirect to
-   `https://ai-build-club.pages.dev/thanks?booked=1`
+   `https://aibuildclub.co/thanks?booked=1`
    Ad parameters (utm_*, fbclid) pass through, and the email is prefilled if the visitor left one.
 2. `video` (personal intro) and `demo` (45-second build): .mp4 URLs.
 3. `metaPixelId`: loads the pixel on `pixelHosts` only. Events: PageView, ViewContent, Lead, InitiateCheckout (book click), Purchase (on `/thanks`, once per booking).

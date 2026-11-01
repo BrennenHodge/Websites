@@ -2,14 +2,14 @@
 const CONFIG = {
   price: 697,
   // Cal.com booking page. Turn on Stripe payment ($697) for this event, and set its
-  // after-booking redirect to https://ai-build-club.pages.dev/thanks?booked=1
+  // after-booking redirect to https://aibuildclub.co/thanks?booked=1
   // Blank = buttons scroll to the offer.
   booking: "https://cal.com/brennenhodge/ai-consult?overlayCalendar=true",
   video: "",       // TODO: personal intro video (.mp4 URL). Blank = placeholder frame.
   demo: "",        // TODO: 45-second build demo (.mp4 URL). Blank = placeholder frame.
   metaPixelId: "", // TODO: Meta Pixel ID. Blank = no tracking loads.
   // The pixel only loads on these hosts, so local and preview traffic doesn't pollute ad data.
-  pixelHosts: ["ai-build-club.pages.dev"],
+  pixelHosts: ["aibuildclub.co"],
   leadEndpoint: "/api/lead",
   intakeEndpoint: "/api/intake",
   // Headline per ad: /?angle=business. Each is [before, highlighted, after]. Every angle sells the same session.
