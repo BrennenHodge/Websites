@@ -469,37 +469,8 @@ mark {
   max-width: 52rem;
 }
 
-/* Proof: apps built with AI */
+/* Proof: everything built with AI */
 .proof { padding-block: var(--section); background: var(--paper-2); }
-.apps {
-  display: grid;
-  gap: 1.25rem;
-  margin-top: clamp(2rem, 1.5rem + 2vw, 3rem);
-}
-@media (min-width: 760px) { .apps { grid-template-columns: 1fr 1fr; } }
-.app {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  overflow: hidden;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  min-width: 0;
-}
-.app__shot {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top;
-  border-bottom: 1px solid var(--line);
-}
-.app__body { display: grid; align-content: start; gap: 0.45rem; padding: 1.3rem 1.4rem 1.5rem; }
-.app__kind { font-size: var(--step--1); font-weight: 600; color: var(--build); }
-.app h3 { font-family: var(--f-display); font-size: var(--step-1); font-weight: 650; letter-spacing: -0.015em; }
-.app__body > p:not(.app__kind):not(.app__meta) { color: var(--ink-soft); }
-.app__meta { margin-top: 0.3rem; font-size: var(--step--1); color: var(--ink-soft); }
 .demo--wide { margin-top: 1.25rem; }
 .demo--wide .demo__frame { aspect-ratio: 21 / 9; }
 @media (max-width: 620px) { .demo--wide .demo__frame { aspect-ratio: 16 / 10; } }
@@ -533,45 +504,17 @@ mark {
   font-weight: 650;
   letter-spacing: -0.015em;
 }
-.proof__sub + .apps { margin-top: 1.25rem; }
 
 .everything {
   margin-top: 1.25rem;
-  border: 2px solid var(--ink);
+  border: 1px solid var(--line);
   border-radius: 16px;
   background: var(--surface);
 }
-.everything summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.1rem 1.4rem;
-  cursor: pointer;
-  list-style: none;
-  font-weight: 700;
-  font-size: var(--step-1);
-}
-.everything summary::-webkit-details-marker { display: none; }
-.everything summary::after {
-  content: "+";
-  flex: none;
-  display: grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background: var(--marker);
-  color: var(--on-marker);
-  transition: transform 0.2s ease;
-}
-.everything[open] summary::after { transform: rotate(45deg); }
 .everything__grid {
   display: grid;
   gap: 1.75rem 2.5rem;
-  padding: 0.5rem 1.4rem 1.6rem;
-  border-top: 1px solid var(--line);
-  padding-top: 1.4rem;
+  padding: 1.5rem 1.4rem 1.6rem;
 }
 @media (min-width: 760px) { .everything__grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 1080px) { .everything__grid { grid-template-columns: 1fr 1fr 1fr; } }
@@ -581,6 +524,21 @@ mark {
 .ev li { position: relative; padding-left: 1rem; color: var(--ink-soft); font-size: var(--step--1); line-height: 1.5; }
 .ev li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 0.35rem; height: 0.35rem; border-radius: 50%; background: var(--marker); }
 .ev li strong { color: var(--ink); font-weight: 600; }
+
+.uses {
+  display: grid;
+  gap: 1px;
+  margin-top: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--line);
+}
+@media (min-width: 620px) { .uses { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 980px) { .uses { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.uses li { display: grid; align-content: start; gap: 0.35rem; padding: 1.2rem 1.3rem; background: var(--surface); min-width: 0; }
+.uses h4 { margin: 0; font-family: var(--f-display); font-size: var(--step-1); font-weight: 700; color: var(--build); }
+.uses p { color: var(--ink-soft); font-size: var(--step--1); line-height: 1.5; }
 
 .logos {
   display: grid;

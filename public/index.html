@@ -127,7 +127,21 @@
     </div>
   </section>
 
-  <!-- 4. Proof: real things built with AI -->
+  <!-- 4. About your coach: right after the topics, so the proof that follows is about him -->
+  <section class="teacher" aria-labelledby="teacher-title">
+    <div class="wrap teacher__grid">
+      <img class="teacher__photo" src="img/brennen-hodge.jpg" width="1000" height="1000" alt="Brennen Hodge" loading="lazy" decoding="async">
+      <div class="teacher__copy">
+        <p class="eyebrow eyebrow--on-dark">About your coach</p>
+        <h2 class="section-title" id="teacher-title">16 years building software and companies. Two hours focused on you.</h2>
+        <p class="teacher__cred">Brennen Hodge &middot; Former VP of Product, voice AI &middot; Founder of dbVantage</p>
+        <p class="teacher__bio">I've spent 16 years building software, developing products and building companies. For 3 years I was VP of Product at a voice AI company, where I built voice agents for healthcare and led AI innovation.</p>
+        <p class="teacher__bio">Today I spend most of my time building with AI: apps, agents, websites and automated workflows, figuring out what's actually useful. I created AI Build Club so you can skip the endless tutorials and avoid the mistakes. For two hours, you get my undivided attention on whatever matters most to you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Proof: everything built with AI, the breakdown, how he uses it, the tools -->
   <section class="proof" aria-labelledby="proof-title">
     <div class="wrap">
       <div class="head">
@@ -145,49 +159,9 @@
         <li><strong class="num">16</strong><span>design systems and brand kits</span></li>
         <li><strong class="num">45</strong><span>research reports</span></li>
       </ul>
-      <h3 class="proof__sub">A few highlights</h3>
-      <ul class="apps">
-        <li class="app">
-          <img class="app__shot" src="img/apps/bidcrew.jpg" width="1280" height="720" alt="BidCrew home page: Win more DOT work. Bid smarter." loading="lazy" decoding="async">
-          <div class="app__body">
-            <p class="app__kind">Software for contractors</p>
-            <h3>BidCrew</h3>
-            <p>Shows road contractors who they're bidding against and predicts a winning price. AI agents read the bid documents for them.</p>
-            <p class="app__meta">80+ pages &middot; 8 AI agents &middot; <a class="link" href="https://bidcrew.ai" target="_blank" rel="noopener">bidcrew.ai</a></p>
-          </div>
-        </li>
-        <li class="app">
-          <img class="app__shot" src="img/apps/playerbio.jpg" width="1280" height="800" alt="Playerbio home page: See exactly what to fix in your pitcher's delivery." loading="lazy" decoding="async">
-          <div class="app__body">
-            <p class="app__kind">AI video coaching</p>
-            <h3>Playerbio</h3>
-            <p>Film a pitch on your phone. AI tracks the whole body, finds what to fix, pins it on the video and gives you drills.</p>
-            <p class="app__meta">Live in about 2 days &middot; <a class="link" href="https://playerbio.co" target="_blank" rel="noopener">playerbio.co</a></p>
-          </div>
-        </li>
-        <li class="app">
-          <img class="app__shot" src="img/apps/agentwebkit.jpg" width="1280" height="800" alt="AgentWebkit home page: Paste your site. See what AI can and can't do with it." loading="lazy" decoding="async">
-          <div class="app__body">
-            <p class="app__kind">Scan-to-checkout SaaS</p>
-            <h3>AgentWebkit</h3>
-            <p>Grades any website on whether AI assistants can find and contact the business, then sells the fixes from a cart.</p>
-            <p class="app__meta">Scan, report, cart and dashboard</p>
-          </div>
-        </li>
-        <li class="app">
-          <img class="app__shot" src="img/apps/throwhitrun.jpg" width="1280" height="800" alt="Throw, Hit &amp; Run home page with a live score readout." loading="lazy" decoding="async">
-          <div class="app__body">
-            <p class="app__kind">Sports events</p>
-            <h3>Throw, Hit &amp; Run</h3>
-            <p>A youth baseball combine with a score calculator, leaderboards and team standings.</p>
-            <p class="app__meta">Built in about 3 days &middot; <a class="link" href="https://throwhitrun.com" target="_blank" rel="noopener">throwhitrun.com</a></p>
-          </div>
-        </li>
-      </ul>
-
-      <!-- The full list. Client work is described without naming the client. -->
-      <details class="everything">
-        <summary>See everything I've built with AI this year</summary>
+      <!-- The breakdown. Client work is described without naming the client. -->
+      <h3 class="proof__sub">What that includes</h3>
+      <div class="everything">
         <div class="everything__grid">
           <section class="ev">
             <h4>Apps and platforms</h4>
@@ -258,11 +232,21 @@
             </ul>
           </section>
         </div>
-      </details>
+      </div>
+
+      <h3 class="proof__sub">How I use AI every day</h3>
+      <ul class="uses">
+        <li><h4>Build</h4><p>Apps, websites and dashboards, with Claude Code, Cursor and Replit.</p></li>
+        <li><h4>Research</h4><p>Markets, competitors and prospects, with Claude, ChatGPT, Gemini and Grok.</p></li>
+        <li><h4>Create</h4><p>Graphics, images, video and voiceovers, with Canva, fal.ai, Kling, Remotion and ElevenLabs.</p></li>
+        <li><h4>Delegate</h4><p>AI agents that find leads, post to social media and handle deploys, with Grok Bot and Hermes.</p></li>
+        <li><h4>Talk</h4><p>I dictate instead of typing with Wispr Flow, and build voice agents with Vapi and Retell.</p></li>
+        <li><h4>Launch</h4><p>Put it live and take payments, with Cloudflare, Railway, GitHub and Stripe.</p></li>
+      </ul>
 
       <!-- Logos: Simple Icons 16.36.0 (img/logos); tools without an icon get a lettered tile. -->
       <div class="tools">
-        <h3 class="proof__sub">The AI tools and platforms I use</h3>
+        <h3 class="proof__sub">The tools I use</h3>
         <ul class="logos">
           <li><span class="logo" style="--icon:url(img/logos/claude.svg)"></span>Claude</li>
           <li><span class="logo logo--text">C</span>ChatGPT</li>
@@ -315,7 +299,7 @@
     </div>
   </section>
 
-  <!-- 5. How it works -->
+  <!-- 6. How it works -->
   <section class="hours-sec" aria-labelledby="hours-title">
     <div class="wrap split">
       <div class="split__intro">
@@ -344,7 +328,7 @@
     </div>
   </section>
 
-  <!-- 6. Who it's for -->
+  <!-- 7. Who it's for -->
   <section class="fit" aria-labelledby="fit-title">
     <div class="wrap split">
       <div class="split__intro">
@@ -358,20 +342,6 @@
           <li>You're new to AI and overwhelmed by all the tools</li>
         </ul>
         <p class="fit__not">No technical or coding experience needed.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. About your coach -->
-  <section class="teacher" aria-labelledby="teacher-title">
-    <div class="wrap teacher__grid">
-      <img class="teacher__photo" src="img/brennen-hodge.jpg" width="1000" height="1000" alt="Brennen Hodge" loading="lazy" decoding="async">
-      <div class="teacher__copy">
-        <p class="eyebrow eyebrow--on-dark">About your coach</p>
-        <h2 class="section-title" id="teacher-title">16 years building software and companies. Two hours focused on you.</h2>
-        <p class="teacher__cred">Brennen Hodge &middot; Former VP of Product, voice AI &middot; Founder of dbVantage</p>
-        <p class="teacher__bio">I've spent 16 years building software, developing products and building companies. For 3 years I was VP of Product at a voice AI company, where I built voice agents for healthcare and led AI innovation.</p>
-        <p class="teacher__bio">Today I spend most of my time building with AI: apps, agents, websites and automated workflows, figuring out what's actually useful. I created AI Build Club so you can skip the endless tutorials and avoid the mistakes. For two hours, you get my undivided attention on whatever matters most to you.</p>
       </div>
     </div>
   </section>
