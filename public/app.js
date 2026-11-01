@@ -1,9 +1,10 @@
 // Everything that changes for the offer lives here.
 const CONFIG = {
   price: 697,
-  // TODO: booking link (Cal.com or Calendly with Stripe payment turned on). Blank = buttons scroll to the offer.
-  // Set its after-booking redirect to https://ai-build-club.pages.dev/thanks?booked=1
-  booking: "",
+  // Cal.com booking page. Turn on Stripe payment ($697) for this event, and set its
+  // after-booking redirect to https://ai-build-club.pages.dev/thanks?booked=1
+  // Blank = buttons scroll to the offer.
+  booking: "https://cal.com/brennenhodge/ai-consult?overlayCalendar=true",
   video: "",       // TODO: personal intro video (.mp4 URL). Blank = placeholder frame.
   demo: "",        // TODO: 45-second build demo (.mp4 URL). Blank = placeholder frame.
   metaPixelId: "", // TODO: Meta Pixel ID. Blank = no tracking loads.

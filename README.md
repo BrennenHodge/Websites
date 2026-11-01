@@ -33,7 +33,11 @@ model.html         internal revenue model calculator (not published)
 2. `video` (personal intro) and `demo` (45-second build): .mp4 URLs.
 3. `metaPixelId`: loads the pixel on `pixelHosts` only. Events: PageView, ViewContent, Lead, InitiateCheckout (book click), Purchase (on `/thanks`, once per booking).
 
-Also: the satisfaction guarantee (TODO in the offer section, once its terms are defined) and the rescheduling and required-tools FAQ answers (TODO, once those policies are set).
+Booking: `CONFIG.booking` is the Cal.com page `brennenhodge/ai-consult`.
+
+Guarantee (set 2026-11-01): love your session or a full $697 refund, requested by email within 7 days after the session, no other conditions.
+
+Also: the rescheduling and required-tools FAQ answers (TODO, once those policies are set).
 
 Headline per ad: `/?angle=experience`, `business`, `build`, `automate`, `beginner` (see `CONFIG.angles`). Every angle leads to the same session.
 
