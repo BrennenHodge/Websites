@@ -586,23 +586,28 @@ mark {
 
 /* Testimonials */
 .voices { padding-block: var(--section); }
+/* Reed's one-on-one quote leads full width, then the other six in an even grid */
 .quotes {
   display: grid;
   gap: 1rem;
   margin-top: clamp(2rem, 1.5rem + 2vw, 3rem);
 }
-@media (min-width: 860px) { .quotes { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 680px) { .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1020px) { .quotes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.quote--lead { grid-column: 1 / -1; }
 .quote {
   display: grid;
   align-content: space-between;
-  gap: 1.5rem;
+  gap: 1.4rem;
   padding: 1.6rem;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 16px;
   min-width: 0;
 }
-.quote__text { font-size: var(--step-1); line-height: 1.4; }
+.quote__text { font-size: var(--step-0); line-height: 1.5; }
+.quote--lead { padding: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem); }
+.quote--lead .quote__text { max-width: 50rem; font-size: var(--step-1); font-weight: 500; line-height: 1.45; }
 .quote__who { display: flex; align-items: center; gap: 0.8rem; font-size: var(--step--1); color: var(--ink-soft); line-height: 1.4; }
 .quote__who strong { color: var(--ink); }
 .quote__avatar {
