@@ -479,9 +479,6 @@ mark {
 
 /* Proof: everything built with AI */
 .proof { padding-block: var(--section); background: var(--paper-2); }
-.demo--wide { margin-top: clamp(3rem, 2.4rem + 2.4vw, 4.5rem); }
-.demo--wide .demo__frame { aspect-ratio: 21 / 9; }
-@media (max-width: 620px) { .demo--wide .demo__frame { aspect-ratio: 16 / 10; } }
 
 /* Built with AI this year: counts with examples, then how he uses AI with its tools */
 .proof .head + .feats { margin-top: clamp(2rem, 1.5rem + 2vw, 3rem); }
