@@ -35,7 +35,7 @@ model.html         internal revenue model calculator (not published)
 2. `video` (personal intro, set: `/video/intro.mp4`, vertical 9:16, with `videoPoster`) and `demo` (45-second build, still a placeholder): .mp4 URLs.
 3. `metaPixelId`: loads the pixel on `pixelHosts` only. Events: PageView, ViewContent, Lead, InitiateCheckout (book click), Purchase (on `/thanks`, once per booking).
 
-Booking: `CONFIG.booking` is the Cal.com page `brennenhodge/ai-consult`.
+Booking: `CONFIG.booking` is the Cal.com page `brennenhodge/ai-build-club`.
 
 Guarantee (set 2026-11-01): love your session or a full $697 refund, requested by email within 7 days after the session, no other conditions.
 
