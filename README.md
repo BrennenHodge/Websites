@@ -29,7 +29,7 @@ model.html         internal revenue model calculator (not published)
 
 ## Placeholders to fill (in `public/app.js` → `CONFIG`)
 
-1. `booking`: the booking link. Use Cal.com or Calendly with Stripe payment turned on, so clients pick a time and pay in one step. Set the after-booking redirect to
+1. `booking`: the booking link. Use Cal.com with payment turned on (currently Cal Pay), so clients pick a time and pay in one step. Set the after-booking redirect to
    `https://aibuildclub.co/thanks?booked=1`
    Ad parameters (utm_*, fbclid) pass through, and the email is prefilled if the visitor left one.
 2. `video` (personal intro, set: `/video/intro.mp4`, vertical 9:16, with `videoPoster`) and `demo` (45-second build, still a placeholder): .mp4 URLs.

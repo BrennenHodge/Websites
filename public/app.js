@@ -1,7 +1,7 @@
 // Everything that changes for the offer lives here.
 const CONFIG = {
   price: 697,
-  // Cal.com booking page. Turn on Stripe payment ($697) for this event, and set its
+  // Cal.com booking page. Payment ($697) runs through Cal Pay on this event, and set its
   // after-booking redirect to https://aibuildclub.co/thanks?booked=1
   // Blank = buttons scroll to the offer.
   booking: "https://cal.com/brennenhodge/ai-build-club?overlayCalendar=true",
