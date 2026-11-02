@@ -5,7 +5,8 @@ const CONFIG = {
   // after-booking redirect to https://aibuildclub.co/thanks?booked=1
   // Blank = buttons scroll to the offer.
   booking: "https://cal.com/brennenhodge/ai-consult?overlayCalendar=true",
-  video: "",       // TODO: personal intro video (.mp4 URL). Blank = placeholder frame.
+  video: "/video/intro.mp4", // Personal intro video (.mp4 URL). Blank = placeholder frame.
+  videoPoster: "/video/intro-poster.jpg",
   demo: "",        // TODO: 45-second build demo (.mp4 URL). Blank = placeholder frame.
   metaPixelId: "", // TODO: Meta Pixel ID. Blank = no tracking loads.
   // The pixel only loads on these hosts, so local and preview traffic doesn't pollute ad data.
@@ -89,7 +90,8 @@ document.querySelectorAll("[data-video]").forEach((frame) => {
   const src = CONFIG[frame.dataset.video];
   if (!src) return;
   const video = document.createElement("video");
-  Object.assign(video, { src, controls: true, playsInline: true, preload: "metadata" });
+  const poster = CONFIG[`${frame.dataset.video}Poster`] || "";
+  Object.assign(video, { src, poster, controls: true, playsInline: true, preload: "metadata" });
   video.setAttribute("aria-label", frame.querySelector(".demo__title")?.textContent || "Video");
   frame.replaceChildren(video);
 });
