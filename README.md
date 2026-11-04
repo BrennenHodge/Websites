@@ -18,6 +18,8 @@ npx wrangler pages deploy --branch main
 public/            everything that gets published
   index.html       the sales page
   thanks.html      after-booking page: Purchase event and the goals questionnaire
+  terms.html       Terms of Service (/terms), linked in every footer
+  privacy.html     Privacy Policy (/privacy): keep it in sync with what the site collects (forms, pixel, booking)
   styles.css       design tokens (light + dark), layout and components
   app.js           CONFIG (price, booking link, videos, pixel, headline angles) and page behavior
   img/             coach photo, app screenshots (img/apps/)

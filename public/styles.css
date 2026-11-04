@@ -871,6 +871,31 @@ mark {
   color: var(--ink-soft);
 }
 .foot .mark { margin-right: 0; }
+.foot__links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+.foot__links a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 0.2em; }
+
+/* Legal pages (terms, privacy) */
+.legal { padding-block: clamp(3rem, 2rem + 4vw, 6rem) var(--section); }
+.legal__inner { max-width: 46rem; }
+.legal__title {
+  font-family: var(--f-display);
+  font-size: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+.legal__date { margin-top: 0.75rem; color: var(--ink-soft); font-size: var(--step--1); }
+.legal h2 {
+  margin-top: 2.25rem;
+  font-family: var(--f-display);
+  font-size: var(--step-1);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.legal p, .legal ul { margin-top: 0.75rem; color: var(--ink-soft); line-height: 1.6; }
+.legal ul { padding-left: 1.25rem; list-style: disc; }
+.legal li + li { margin-top: 0.35rem; }
+.legal strong { color: var(--ink); }
 
 /* Thank-you page */
 .thanks { padding-block: clamp(3rem, 2rem + 4vw, 6rem) var(--section); }
