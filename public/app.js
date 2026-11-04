@@ -7,7 +7,7 @@ const CONFIG = {
   booking: "https://cal.com/brennenhodge/ai-build-club?overlayCalendar=true",
   video: "/video/intro.mp4", // Personal intro video (.mp4 URL). Blank = placeholder frame.
   videoPoster: "/video/intro-poster.jpg",
-  metaPixelId: "", // TODO: Meta Pixel ID. Blank = no tracking loads.
+  metaPixelId: "1114694707846383", // Meta Pixel (dataset "AI Build Club", DB Vantage portfolio). Blank = no tracking loads.
   // The pixel only loads on these hosts, so local and preview traffic doesn't pollute ad data.
   pixelHosts: ["aibuildclub.co"],
   leadEndpoint: "/api/lead",
