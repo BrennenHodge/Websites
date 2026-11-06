@@ -2,7 +2,7 @@
 
 Live at https://aibuildclub.co (Cloudflare Pages project `ai-build-club`; www and ai-build-club.pages.dev redirect there via `functions/_middleware.js`).
 
-Ad landing page (Meta ads) for one offer: **private, one-on-one AI coaching**, two hours, $697, live online, with Brennen Hodge (16 years building software and companies). Each session is tailored to the client's goals: learning the AI tools, automating work, building something, or using AI in their business. No technical experience needed.
+Ad landing page (Meta ads) for one offer: **private, one-on-one AI coaching**, two hours, $297, live online, with Brennen Hodge (16 years building software and companies). Each session is tailored to the client's goals: learning the AI tools, automating work, building something, or using AI in their business. No technical experience needed.
 
 Funnel: ad → sales page (`/`) → booking tool (pick a time + pay) → thank-you page (`/thanks`) with a short goals questionnaire. Visitors who don't book can leave an email (inline form under the offer, plus an exit-intent popup on desktop).
 
@@ -39,7 +39,7 @@ model.html         internal revenue model calculator (not published)
 
 Booking: `CONFIG.booking` is the Cal.com page `brennenhodge/ai-build-club`.
 
-Guarantee (set 2026-11-01): love your session or a full $697 refund, requested by email within 7 days after the session, no other conditions.
+Guarantee (set 2026-11-01; price lowered from $697 to $297 on 2026-11-06): love your session or a full $297 refund, requested by email within 7 days after the session, no other conditions.
 
 Also: the rescheduling and required-tools FAQ answers (TODO, once those policies are set).
 
