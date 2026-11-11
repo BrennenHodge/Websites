@@ -24,20 +24,24 @@
     <nav class="links" id="links" aria-label="Quick links"></nav>
 
     <div class="grid">
-      <section class="card" aria-labelledby="todoTitle">
+      <section class="card" aria-labelledby="taskTitle">
         <div class="card-head">
-          <h2 id="todoTitle">Todo</h2>
-          <span class="pill" id="todoCount"></span>
+          <h2 id="taskTitle">Tasks</h2>
+          <span class="pill" id="taskCount"></span>
         </div>
-        <form id="todoForm" class="add">
+        <form id="taskForm" class="add">
           <span class="add-plus" aria-hidden="true">+</span>
-          <input id="todoInput" type="text" placeholder="Add a task and press Enter" autocomplete="off" maxlength="300">
+          <input id="taskInput" type="text" placeholder="Give your agents a task…" autocomplete="off" maxlength="500" aria-describedby="taskHint">
+          <span class="route-preview" id="routePreview" hidden></span>
         </form>
-        <ul class="todos" id="todoList"></ul>
-        <p class="empty" id="todoEmpty" hidden>Nothing on the list. Enjoy it.</p>
+        <p class="hint" id="taskHint">
+          <kbd>Enter</kbd> add · <kbd id="sendKey">Ctrl</kbd>+<kbd>Enter</kbd> add &amp; send · <kbd>@name</kbd> pick an agent
+        </p>
+        <div id="taskGroups"></div>
+        <p class="empty" id="taskEmpty" hidden>No tasks. Type one above and Helm will pick the right agent for it.</p>
         <details class="done-wrap" id="doneWrap" hidden>
           <summary><span id="doneLabel">Completed</span></summary>
-          <ul class="todos done" id="doneList"></ul>
+          <ul class="tasks" id="doneList"></ul>
           <button class="text-btn" id="clearDone" type="button">Clear completed</button>
         </details>
       </section>
@@ -46,62 +50,97 @@
         <div class="card-head">
           <h2 id="agentTitle">Agents</h2>
           <span class="meta" id="agentMeta"></span>
-          <button class="icon-btn small" id="refreshBtn" aria-label="Refresh agents" title="Refresh">
+          <button class="icon-btn small" id="refreshBtn" aria-label="Refresh" title="Refresh">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
           </button>
         </div>
         <div class="errors" id="agentErrors" hidden></div>
-        <div id="agentBody"></div>
+        <ul class="roster" id="roster"></ul>
+        <div id="activity"></div>
       </section>
     </div>
   </main>
 
+  <div class="toast" id="toast" role="status" hidden></div>
+
   <dialog id="settings">
     <form method="dialog" id="settingsForm">
-      <h2>Settings</h2>
+      <div class="dlg-head">
+        <h2>Settings</h2>
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" data-tab="agents" aria-selected="true">Agents</button>
+          <button type="button" role="tab" data-tab="github" aria-selected="false">GitHub</button>
+          <button type="button" role="tab" data-tab="general" aria-selected="false">General</button>
+        </div>
+      </div>
 
-      <label class="field">
-        <span>Your name</span>
-        <input name="name" type="text" placeholder="For the greeting" autocomplete="off">
-      </label>
+      <div class="tab-panel" data-panel="agents">
+        <fieldset>
+          <legend>Routing</legend>
+          <label class="field">
+            <span>Anthropic API key <em>(optional, for smart routing)</em></span>
+            <input name="anthropicKey" type="password" placeholder="sk-ant-…" autocomplete="off" spellcheck="false">
+            <small>With a key, Claude reads each task and picks the best agent from the descriptions below. Without one, Helm uses <code>@mentions</code> and keywords. <a href="https://platform.claude.com/settings/keys" target="_blank" rel="noopener">Get a key</a>.</small>
+          </label>
+          <label class="check"><input name="smartRouting" type="checkbox"> Let Claude route tasks</label>
+          <label class="check"><input name="autoDispatch" type="checkbox"> Send tasks to agents as soon as they're added</label>
+          <label class="field">
+            <span>When nothing matches, give it to</span>
+            <select name="defaultAgentId" id="defaultAgentSelect"></select>
+          </label>
+        </fieldset>
 
-      <fieldset>
-        <legend>GitHub</legend>
+        <div class="agents-head">
+          <h3>Your agents</h3>
+          <button type="button" class="text-btn" id="addAgent">+ Add agent</button>
+        </div>
+        <div id="agentEditors"></div>
+      </div>
+
+      <div class="tab-panel" data-panel="github" hidden>
         <label class="field">
           <span>Personal access token</span>
           <input name="githubToken" type="password" placeholder="ghp_… or github_pat_…" autocomplete="off" spellcheck="false">
-          <small>A classic token with <code>repo</code> scope (or <code>public_repo</code>) works best.
-            <a href="https://github.com/settings/tokens/new?scopes=repo&description=Helm%20new%20tab" target="_blank" rel="noopener">Create one</a>.
-            Stored only in this browser.</small>
+          <small>Classic token with <code>repo</code> scope: Helm creates issues for GitHub agents and reads PR status.
+            <a href="https://github.com/settings/tokens/new?scopes=repo&description=Helm%20new%20tab" target="_blank" rel="noopener">Create one</a>. Stored only in this browser.</small>
         </label>
         <label class="field">
-          <span>Agent patterns</span>
-          <input name="agentPatterns" type="text" spellcheck="false">
-          <small>Comma-separated. A PR counts as agent work if its author or branch contains one of these.</small>
+          <span>Default repo</span>
+          <input name="defaultRepo" type="text" placeholder="owner/repo" spellcheck="false">
+          <small>Where GitHub agents open issues unless the agent sets its own repo.</small>
         </label>
-        <label class="check"><input name="agentOnly" type="checkbox"> Only show agent PRs</label>
-        <div class="row">
-          <label class="field"><span>Look back (days)</span><input name="lookbackDays" type="number" min="1" max="60"></label>
-          <label class="field"><span>Refresh every (min)</span><input name="pollMinutes" type="number" min="1" max="120"></label>
-        </div>
-      </fieldset>
+        <fieldset>
+          <legend>Other agent activity</legend>
+          <label class="field">
+            <span>Agent patterns</span>
+            <input name="agentPatterns" type="text" spellcheck="false">
+            <small>PRs whose author or branch contains one of these show under Activity, even if Helm didn't send them.</small>
+          </label>
+          <label class="check"><input name="agentOnly" type="checkbox"> Only show agent PRs</label>
+          <div class="row">
+            <label class="field"><span>Look back (days)</span><input name="lookbackDays" type="number" min="1" max="60"></label>
+            <label class="field"><span>Refresh every (min)</span><input name="pollMinutes" type="number" min="1" max="120"></label>
+          </div>
+          <label class="field">
+            <span>Status feed URL <em>(optional)</em></span>
+            <input name="feedUrl" type="url" placeholder="http://127.0.0.1:4317/agents.json" spellcheck="false">
+            <small>JSON your own bots publish. Items with a <code>taskId</code> update that task. See README.</small>
+          </label>
+        </fieldset>
+      </div>
 
-      <fieldset>
-        <legend>Custom agent feed <em>(optional)</em></legend>
+      <div class="tab-panel" data-panel="general" hidden>
         <label class="field">
-          <span>JSON feed URL</span>
-          <input name="feedUrl" type="url" placeholder="http://127.0.0.1:4317/agents.json" spellcheck="false">
-          <small>Any endpoint returning <code>[{ title, status, agent, url }]</code>. See README.</small>
+          <span>Your name</span>
+          <input name="name" type="text" placeholder="For the greeting" autocomplete="off">
         </label>
-      </fieldset>
-
-      <label class="check"><input name="notify" type="checkbox"> Notify me when an agent needs me or finishes</label>
-
-      <label class="field">
-        <span>Quick links</span>
-        <textarea name="links" rows="4" spellcheck="false" placeholder="Claude Code | https://claude.ai/code"></textarea>
-        <small>One per line: <code>Name | URL</code></small>
-      </label>
+        <label class="check"><input name="notify" type="checkbox"> Notify me when an agent needs me or finishes</label>
+        <label class="field">
+          <span>Quick links</span>
+          <textarea name="links" rows="4" spellcheck="false" placeholder="Claude Code | https://claude.ai/code"></textarea>
+          <small>One per line: <code>Name | URL</code></small>
+        </label>
+      </div>
 
       <p class="form-error" id="settingsError" hidden></p>
       <div class="actions">
@@ -110,6 +149,55 @@
       </div>
     </form>
   </dialog>
+
+  <template id="agentEditorTpl">
+    <details class="agent-editor">
+      <summary><span class="ae-name"></span><span class="ae-method"></span></summary>
+      <div class="ae-body">
+        <div class="row">
+          <label class="field"><span>Name</span><input data-k="name" type="text" required></label>
+          <label class="field"><span>How to send tasks</span>
+            <select data-k="method">
+              <option value="github">GitHub issue</option>
+              <option value="webhook">Webhook (POST)</option>
+              <option value="link">Open a link</option>
+              <option value="none">Don't send (my own todo)</option>
+            </select>
+          </label>
+        </div>
+        <label class="field"><span>Good at</span>
+          <textarea data-k="description" rows="2" placeholder="What kinds of tasks should go to this agent?"></textarea>
+          <small>Claude reads this to decide where tasks go.</small>
+        </label>
+        <label class="field"><span>Keywords</span>
+          <input data-k="keywords" type="text" spellcheck="false" placeholder="fix, bug, website">
+          <small>Comma-separated. Used when Claude routing is off.</small>
+        </label>
+        <div class="m m-github">
+          <div class="row">
+            <label class="field"><span>Repo</span><input data-k="repo" type="text" placeholder="owner/repo (blank = default)" spellcheck="false"></label>
+            <label class="field"><span>Mention</span><input data-k="mention" type="text" placeholder="@claude" spellcheck="false"></label>
+          </div>
+          <div class="row">
+            <label class="field"><span>Labels</span><input data-k="labels" type="text" placeholder="agent, claude" spellcheck="false"></label>
+            <label class="field"><span>Assignees</span><input data-k="assignees" type="text" placeholder="login, …" spellcheck="false"></label>
+          </div>
+          <small class="m-note">The issue body starts with the mention, e.g. <code>@claude</code> triggers the Claude Code GitHub Action.</small>
+        </div>
+        <div class="m m-webhook">
+          <label class="field"><span>Webhook URL</span><input data-k="webhookUrl" type="url" placeholder="https://your-bot.example.com/tasks" spellcheck="false"></label>
+          <label class="field"><span>Authorization header <em>(optional)</em></span><input data-k="webhookAuth" type="password" placeholder="Bearer …" autocomplete="off" spellcheck="false"></label>
+          <small class="m-note">Helm POSTs <code>{ taskId, task, agent, createdAt }</code>. Report progress back through the status feed.</small>
+        </div>
+        <div class="m m-link">
+          <label class="field"><span>URL</span><input data-k="url" type="url" placeholder="https://grok.com/?q={task}" spellcheck="false">
+            <small>Opens in a new tab. <code>{task}</code> is replaced with the task text, which is also copied to your clipboard.</small>
+          </label>
+        </div>
+        <button type="button" class="text-btn danger ae-remove">Remove agent</button>
+      </div>
+    </details>
+  </template>
 
   <script type="module" src="newtab.js"></script>
 </body>

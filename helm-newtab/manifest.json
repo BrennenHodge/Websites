@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Helm — Todos & Agents",
+  "name": "Helm \u2014 Agent Tasks",
   "short_name": "Helm",
-  "version": "0.1.0",
-  "description": "Your new tab: a focused todo list plus a live view of what your coding agents are doing.",
+  "version": "0.2.0",
+  "description": "Your new tab: a task list where every task is routed to the right AI agent, and you can watch each one get done.",
   "chrome_url_overrides": {
     "newtab": "newtab.html"
   },
@@ -12,7 +12,7 @@
     "type": "module"
   },
   "action": {
-    "default_title": "Helm — open dashboard",
+    "default_title": "Helm \u2014 open dashboard",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png"
@@ -24,7 +24,20 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "permissions": ["storage", "alarms", "notifications", "favicon"],
-  "host_permissions": ["https://api.github.com/*"],
-  "optional_host_permissions": ["https://*/*", "http://localhost/*", "http://127.0.0.1/*"]
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "favicon",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://api.github.com/*",
+    "https://api.anthropic.com/*"
+  ],
+  "optional_host_permissions": [
+    "https://*/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ]
 }

@@ -1,16 +1,16 @@
 [
   {
-    "id": "research-1",
-    "title": "Research competitor pricing",
-    "agent": "Research bot",
+    "taskId": "paste-a-helm-task-id-here",
+    "id": "ops-1",
+    "title": "Rotate the staging API keys",
+    "agent": "Ops bot",
     "status": "needs_input",
-    "detail": "Waiting on which regions to cover",
-    "url": "https://example.com/runs/research-1"
+    "detail": "Need approval to rotate prod keys"
   },
   {
     "id": "etl-nightly",
     "title": "Nightly inventory sync",
-    "agent": "ETL agent",
+    "agent": "ETL bot",
     "status": "running",
     "updatedAt": "2026-11-11T08:00:00Z"
   }
