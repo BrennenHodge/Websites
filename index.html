@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Helm: a new tab that hands your tasks to AI agents</title>
+  <meta name="description" content="Helm turns Chrome's new tab into a task queue for your AI agents. Type a task, Helm routes it to Claude Code, Grok, your own bots or you, then tracks it until it's done.">
+  <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Helm: hand off the work, keep the wheel">
+  <meta property="og:description" content="A new tab that routes every task to the right AI agent and tracks it until it's done.">
+  <meta property="og:image" content="assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon32.png">
+  <link rel="apple-touch-icon" href="assets/icon128.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Helm home">
+        <img src="assets/icon32.png" width="24" height="24" alt="">
+        <span>Helm</span>
+      </a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#how">How it works</a>
+        <a href="#agents">Agents</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-small" href="#install">Get Helm</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-copy">
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> A Chrome new tab for people who delegate</p>
+        <h1>Hand off the work.<br><em>Keep the wheel.</em></h1>
+        <p class="lede">Helm turns every new tab into a task queue for your AI agents. Type a task, and Helm sends it to the right one: Claude Code, Grok, your own bots, or you. Then it tracks the task until it's done.</p>
+        <div class="cta-row">
+          <a class="btn" href="helm.zip" download>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download for Chrome
+          </a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+        <p class="fineprint">Free · No account · Works in Chrome, Edge and Brave</p>
+      </div>
+
+      <div class="container">
+        <figure class="browser" aria-label="Helm's new tab page showing tasks routed to agents">
+          <div class="browser-bar" aria-hidden="true">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="tab"><img src="assets/icon32.png" alt="">New Tab</span>
+            <span class="toolbar-icon"><img src="assets/icon32.png" alt=""><b>2</b></span>
+          </div>
+          <picture>
+            <source srcset="assets/newtab-dark.webp" media="(prefers-color-scheme: dark)">
+            <img src="assets/newtab-light.webp" width="2880" height="1840" alt="Helm new tab: tasks grouped into Needs you, Ready to send, Your todos and Agents working, with an Agents panel listing Claude Code, Grok, Ops bot and Me.">
+          </picture>
+          <div class="toast-card" aria-hidden="true">
+            <img src="assets/icon32.png" alt="">
+            <div>
+              <b>Claude Code: Ready for review</b>
+              <span>Fix the checkout button on mobile Safari</span>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Logos / works with -->
+    <section class="works-with" aria-label="Works with">
+      <div class="container">
+        <p>Routes tasks to</p>
+        <ul>
+          <li>Claude Code</li><li>Grok</li><li>GitHub Copilot</li><li>Codex</li><li>Your own bots</li><li>You</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how">
+      <div class="container">
+        <p class="kicker">How it works</p>
+        <h2>One box. Every agent.</h2>
+        <div class="steps">
+          <article class="step">
+            <span class="step-n">1</span>
+            <h3>Type it</h3>
+            <p>Open a new tab and write the task the way you'd say it. Add <code>@claude</code> or <code>@grok</code> if you already know who should take it.</p>
+          </article>
+          <article class="step">
+            <span class="step-n">2</span>
+            <h3>Helm routes it</h3>
+            <p>Claude reads what each of your agents is good at and picks one, with a one-line reason. No API key? Keywords and mentions work too.</p>
+          </article>
+          <article class="step">
+            <span class="step-n">3</span>
+            <h3>Watch it land</h3>
+            <p>Helm follows each task: the agent picking it up, the PR it opens, checks running, ready for review, merged. You get pinged when it's your turn.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive router demo -->
+    <section class="section demo-section" aria-labelledby="demoTitle">
+      <div class="container demo-grid">
+        <div>
+          <p class="kicker">Try the router</p>
+          <h2 id="demoTitle">Who should do this?</h2>
+          <p class="section-lede">Type a task and see where Helm would send it. This demo matches keywords in your browser. In the extension, Claude makes the call from your own agent descriptions.</p>
+          <div class="examples" role="list" aria-label="Example tasks">
+            <button type="button" role="listitem" data-task="Fix the checkout bug on mobile Safari">Fix the checkout bug on mobile Safari</button>
+            <button type="button" role="listitem" data-task="Research what competitors charge for their pro plans">Research competitor pricing</button>
+            <button type="button" role="listitem" data-task="Rotate the staging API keys">Rotate the staging API keys</button>
+            <button type="button" role="listitem" data-task="Call the accountant about Q4 estimates">Call the accountant</button>
+            <button type="button" role="listitem" data-task="@grok summarize this week in AI agents">@grok summarize this week in AI</button>
+          </div>
+        </div>
+        <div class="demo-card">
+          <label class="demo-input">
+            <span class="sr-only">Task</span>
+            <span class="plus" aria-hidden="true">+</span>
+            <input id="demoInput" type="text" placeholder="Give your agents a task…" autocomplete="off" maxlength="200">
+            <span class="chip" id="demoChip" hidden></span>
+          </label>
+          <div class="demo-result" id="demoResult" aria-live="polite">
+            <p class="demo-empty">Pick an example or type your own.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agents -->
+    <section class="section" id="agents">
+      <div class="container">
+        <p class="kicker">Agents</p>
+        <h2>Bring the agents you already use.</h2>
+        <p class="section-lede">Each agent gets a short description of what it's good at and one way to receive work. Add as many as you like.</p>
+        <div class="agent-grid">
+          <article class="agent-card">
+            <div class="agent-head"><span class="avatar">C</span><div><h3>Claude Code</h3><span class="method">GitHub issue</span></div></div>
+            <p>Helm opens an issue that starts with <code>@claude</code>, and the Claude Code GitHub Action picks it up. Copilot, Codex and other GitHub agents work the same way, with their own mention, label or assignee.</p>
+            <div class="mini-flow"><span>Issue #412</span><i></i><span>PR #418</span><i></i><span class="ok">Checks pass</span></div>
+          </article>
+          <article class="agent-card">
+            <div class="agent-head"><span class="avatar">G</span><div><h3>Grok, ChatGPT, anything with a URL</h3><span class="method">Open a link</span></div></div>
+            <p>One click opens the agent and copies your task to the clipboard. If the agent accepts a prompt in its URL, Helm fills it in for you.</p>
+            <div class="mini-flow"><span>Copied</span><i></i><span>grok.com</span><i></i><span>Tick it off</span></div>
+          </article>
+          <article class="agent-card">
+            <div class="agent-head"><span class="avatar">O</span><div><h3>Your own bots</h3><span class="method">Webhook</span></div></div>
+            <p>Helm POSTs <code>{ taskId, task }</code> to your bot. The bot reports back through a small JSON status feed, and Helm updates the task live.</p>
+            <div class="mini-flow"><span>POST /tasks</span><i></i><span>Working</span><i></i><span class="warn">Needs input</span></div>
+          </article>
+          <article class="agent-card">
+            <div class="agent-head"><span class="avatar me">M</span><div><h3>You</h3><span class="method">Plain todo</span></div></div>
+            <p>Calls, payments, signatures: things only a person should do land in <em>Your todos</em>, right beside the work your agents are doing.</p>
+            <div class="mini-flow"><span>Call the accountant</span><i></i><span class="ok">Done</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lifecycle -->
+    <section class="section lifecycle-section">
+      <div class="container">
+        <p class="kicker">Always know where things stand</p>
+        <h2>From “sent” to “shipped”, on every new tab.</h2>
+        <ol class="lifecycle">
+          <li class="lc lc-queued"><span class="lc-dot"></span><h3>Ready to send</h3><p>Routed and waiting for your OK, or sent automatically if you prefer.</p></li>
+          <li class="lc lc-working"><span class="lc-dot"></span><h3>Agents working</h3><p>The agent's latest update, the PR it opened, and checks as they run.</p></li>
+          <li class="lc lc-needs"><span class="lc-dot"></span><h3>Needs you</h3><p>Ready for review, checks failing, or a question. You get a notification and a badge.</p></li>
+          <li class="lc lc-done"><span class="lc-dot"></span><h3>Done</h3><p>Merged or finished, collected in Completed so you can see the day's work.</p></li>
+        </ol>
+        <div class="split">
+          <picture class="split-img">
+            <img src="assets/tasks-card.webp" width="1238" height="1666" loading="lazy" alt="Close-up of the Helm task list: typing '@claude add a sitemap' shows a '→ Claude Code' routing preview.">
+          </picture>
+          <div class="split-copy">
+            <h3>Built for a glance</h3>
+            <ul class="checks">
+              <li><b>Live routing preview.</b> See which agent gets the task before you press Enter.</li>
+              <li><b>⌘/Ctrl+Enter</b> adds the task and sends it in one move.</li>
+              <li><b>Reassign</b> any queued task from the dropdown on its row.</li>
+              <li><b>Other agent activity</b> shows PRs your agents opened outside Helm too.</li>
+              <li><b>Light and dark</b>, following your system setting.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy -->
+    <section class="section privacy">
+      <div class="container privacy-inner">
+        <div>
+          <p class="kicker">Nothing in between</p>
+          <h2>No servers. No account.<br>Your keys stay in your browser.</h2>
+        </div>
+        <ul class="privacy-list">
+          <li><b>Runs entirely in Chrome.</b> Tasks and settings are stored in your browser, not on a Helm server, because there isn't one.</li>
+          <li><b>Talks only to what you connect.</b> GitHub with your token, Anthropic with your key, your bots at their URLs. Chrome asks before Helm contacts a new host.</li>
+          <li><b>Readable source.</b> Plain JavaScript, no build step, so you can see exactly what it does.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Install -->
+    <section class="section" id="install">
+      <div class="container install">
+        <div class="install-copy">
+          <p class="kicker">Get Helm</p>
+          <h2>Running in under a minute.</h2>
+          <p class="section-lede">Helm isn't on the Chrome Web Store yet, so you install it by hand. It takes three steps.</p>
+          <a class="btn" href="helm.zip" download>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download helm.zip
+          </a>
+        </div>
+        <ol class="install-steps">
+          <li><span>1</span><div><b>Unzip it</b><p>You'll get a folder called <code>helm</code>.</p></div></li>
+          <li><span>2</span><div><b>Open <code>chrome://extensions</code></b><p>Turn on <em>Developer mode</em> in the top-right corner.</p></div></li>
+          <li><span>3</span><div><b>Click “Load unpacked”</b><p>Choose the <code>helm</code> folder, then open a new tab. Keep the new tab change if Chrome asks.</p></div></li>
+          <li><span>✦</span><div><b>Connect your agents</b><p>In ⚙ Settings, add a GitHub token and repo. Add an Anthropic key if you want Claude to route.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container faq">
+        <p class="kicker">FAQ</p>
+        <h2>Questions</h2>
+        <details>
+          <summary>Does Helm cost anything?</summary>
+          <p>Helm is free. Your agents bill the way they always do. Smart routing makes one small Claude API request per task on your own Anthropic key, and it's optional.</p>
+        </details>
+        <details>
+          <summary>Do I need an Anthropic API key?</summary>
+          <p>No. Without one, Helm routes by <code>@mention</code> and by keywords you set for each agent. With a key, Claude reads your agents' descriptions and picks the best fit for each task.</p>
+        </details>
+        <details>
+          <summary>How does a task reach Claude Code?</summary>
+          <p>Helm opens a GitHub issue in the repo you choose, starting with <code>@claude</code>. The Claude Code GitHub Action responds by working on it and opening a pull request. Helm follows the issue and PR and shows you progress. Set the action up once per repo by running <code>/install-github-app</code> in Claude Code.</p>
+        </details>
+        <details>
+          <summary>Can I use agents that aren't on GitHub?</summary>
+          <p>Yes. Any agent that accepts an HTTP request can be a webhook agent, and any agent with a web page can be a link agent. Webhook agents can report progress back through a JSON status feed. The download includes a working example bot.</p>
+        </details>
+        <details>
+          <summary>Which browsers work?</summary>
+          <p>Chrome and other Chromium-based browsers that support Manifest V3 extensions, such as Edge and Brave.</p>
+        </details>
+        <details>
+          <summary>Where is my data stored?</summary>
+          <p>In your browser's extension storage on your computer. Helm has no backend and no analytics. It sends data only to the services you connect.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="container final-inner">
+        <h2>Your agents are ready.<br><em>Give them something to do.</em></h2>
+        <a class="btn" href="#install">Get Helm, free</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="brand small"><img src="assets/icon32.png" width="18" height="18" alt=""> Helm</span>
+      <span>A new tab for people who delegate.</span>
+      <a href="https://github.com/BrennenHodge/Websites">Source on GitHub</a>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
