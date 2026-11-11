@@ -1,0 +1,17 @@
+[
+  {
+    "id": "research-1",
+    "title": "Research competitor pricing",
+    "agent": "Research bot",
+    "status": "needs_input",
+    "detail": "Waiting on which regions to cover",
+    "url": "https://example.com/runs/research-1"
+  },
+  {
+    "id": "etl-nightly",
+    "title": "Nightly inventory sync",
+    "agent": "ETL agent",
+    "status": "running",
+    "updatedAt": "2026-11-11T08:00:00Z"
+  }
+]
