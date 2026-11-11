@@ -14,10 +14,14 @@ rm -f "$here/helm.zip"
 (cd "$tmp" && python3 -c "
 import os, zipfile
 with zipfile.ZipFile('$here/helm.zip', 'w', zipfile.ZIP_DEFLATED) as z:
-    for root, _, files in os.walk('helm'):
+    for root, dirs, files in os.walk('helm'):
+        dirs.sort()
         for f in sorted(files):
             p = os.path.join(root, f)
-            z.write(p, p)
+            info = zipfile.ZipInfo(p, date_time=(2026, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o644 << 16
+            z.writestr(info, open(p, 'rb').read())
 ")
 rm -rf "$tmp"
 touch "$here/.nojekyll"
