@@ -19,7 +19,7 @@ fi
 
 # Replace the published files with the current site.
 git -C "$tmp" rm -rqf --ignore-unmatch . >/dev/null
-rsync -a --exclude build.sh --exclude deploy.sh --exclude README.md "$here/" "$tmp/"
+tar -C "$here" --exclude ./build.sh --exclude ./deploy.sh --exclude ./README.md -cf - . | tar -C "$tmp" -xf -
 git -C "$tmp" add -A
 if git -C "$tmp" diff --cached --quiet; then
   echo "Nothing changed; site is up to date."
